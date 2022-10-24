@@ -38,7 +38,7 @@ console.log(lunchList);
 //제어할 요소선택 후 변수에 담기
 let displaySlot = document.querySelector(".menu_slot"); //menu slot
 let elem = document.querySelector(".menu_print > h2"); //menu print
-let inputValue = document.querySelector("#search");
+let inputValue = document.querySelector(".search");
 
 // let distanceTxt = document.querySelector(".main_text> p > span"); //distance
 // let costTxt = document.querySelector("em"); //cost
