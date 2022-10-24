@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- font -->
+    <!-- bootstrap -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+    /> -->
+    <!-- Bootstrap Icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+    <!-- Normalize.css -->
+    <link rel="stylesheet" href="/static/css/normalize.css" />
+
+    <link rel="stylesheet" href="/static/css/index.css" />
+    <link rel="stylesheet" href="/static/css/random.css" />
+    <link rel="stylesheet" href="/static/css/cash.css" />
+    <!-- CDN -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="main-container">
+      <!-- <header class="menu">
+        <div class="sidenav">
+          <nav class="list-menu">
+            <div class="logo">
+              <img class="menu" src="/static/image/cutlery.png" alt="점메추" />
+            </div>
+            <div href="#" class="icon"><i class="bi bi-list"></i>MENU</div>
+            <div class="ul-list">
+              <a class="cat" href="./index.html">Home</a>
+              <a class="cat dropdown-btn"> 정산 게임 </a>
+              <div class="dropdown-container">
+                <a class="game" href="/dicegame.html">주사위 게임</a>
+                <a class="game" href="#">Link 2</a>
+                <a class="game" href="#">Link 3</a>
+              </div>
+              <a class="cat popup2">계산기</a>
+              <a class="cat" href="#">팀원 소개</a>
+            </div>
+          </nav>
+        </div>
+      </header> -->
+
+      <nav class="menu-list">
+        <img class="toggle-logo" src="/static/image/toggle-logo.png" />
+        <div href="#" class="icon"><i class="bi bi-list"></i>MENU</div>
+        <div class="ul-list">
+          <a class="ls dropdown-btn">
+            <img class="menu-icon" src="/static/image/game.png" />
+            <p class="p-none">정산게임</p>
+            <div class="dropdown-container">
+              <a class="game" href="/dicegame.html">주사위 게임</a>
+              <a class="game" href="#">Link 2</a>
+              <a class="game" href="#">Link 3</a>
+            </div>
+          </a>
+          <a class="ls hover popup">
+            <img class="menu-icon" src="/static/image/calculator.png" />
+            <p class="p-none">계산기</p>
+          </a>
+          <a class="ls hover" href="#">
+            <img class="menu-icon" src="/static/image/team.png" />
+            <p class="p-none">팀원 소개</p>
+          </a>
+        </div>
+      </nav>
+
+      <!-- 토글 메뉴 -->
+      <nav class="toggle-menu d-none">
+        <div class="toggle-menu-list">
+          <a class="toggle-ls toggle-dropdown-btn">
+            정산 게임
+            <!-- <i class="fa fa-caret-down"></i> -->
+          </a>
+          <div class="toggle-container">
+            <a class="t-game" href="./dicegame.html">사다리게임</a>
+            <a class="t-game" href="#">Link 2</a>
+            <a class="t-game" href="#">Link 3</a>
+          </div>
+          <a class="toggle-ls popup2">계산기</a>
+          <a class="toggle-ls" href="#">팀원 소개</a>
+        </div>
+      </nav>
+
+      <div class="main">
+        <div class="title-logo">
+          <img class="logo" src="/static/image/title-logo.png" alt="점메추" />
+        </div>
+        <!-- <form>
+          <input
+            id="search"
+            type="search"
+            name="q"
+            placeholder="찾고 싶은 메뉴를 입력해 주세요"
+            onfocus="this.placeholder=''"
+            onblur="this.placeholder='찾고 싶은 메뉴를 입력해 주세요'"
+          />
+          <button id="submit" type="submit">
+            <img src="/static/image/search.png" />
+          </button>
+        </form> -->
+        <div class="input-group mb-3">
+          <input
+            id="search"
+            type="search"
+            class="form-control"
+            placeholder="찾고 싶은 메뉴를 입력해 주세요"
+            aria-label="찾고 싶은 메뉴를 입력해 주세요"
+            aria-describedby="button-addon2"
+          />
+          <button class="btn btn-outline-secondary" type="submit" id="submit">
+            <img src="/static/image/search.png" />
+          </button>
+        </div>
+
+        <div class="random">
+          <div class="receipt">
+            <div class="title_text">
+              <h2>오늘 뭐 먹지?</h2>
+            </div>
+            <div class="menu_print">
+              <h2></h2>
+            </div>
+            <div class="menu_slot">
+              <div class="slot_container">
+                <ul class="slide_box">
+                  <li>냉면</li>
+                  <li class="a">떡복이</li>
+                  <li>김밥</li>
+                  <li>국밥</li>
+                  <li>잔치국수</li>
+                  <li>짜장면</li>
+                  <li>우동</li>
+                  <li>핫도그</li>
+                  <li>초밥</li>
+                  <li>부대찌개</li>
+                  <li>돈까스</li>
+                  <li>토스트</li>
+                  <li>패스트푸드</li>
+                  <li>편의점</li>
+                  <li>컵밥</li>
+                  <li>백반</li>
+                  <li>파스타</li>
+                  <li>스테이크</li>
+                  <li>짬뽕</li>
+                  <li>제육볶음</li>
+                </ul>
+              </div>
+              <p class="click">
+                click<img class="click-logo" src="/static/image/click.png" />
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="modal modal-overlay" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="close-area">X</div>
+              <div class="modal-body">
+                <div class="cash-main-container">
+                  <!-- 메뉴 입력창 부분 -->
+                  <form id="menuForm">
+                    <h1 class="cash-title">우리 정산 해요</h1>
+                    <div class="wrapper">
+                      <p class="first">주문 입력</p>
+                      <label>메뉴</label>
+                      <input id="menu" type="text" />
+
+                      <label>가격</label>
+                      <input id="price" type="text" />
+                      <button id="submitButton" type="submit">+</button>
+                    </div>
+                  </form>
+                  <!-- 입력 결과 창 부분 -->
+                  <div class="order-list">
+                    <p class="second">주문 리스트</p>
+                    <ol class="lists"></ol>
+                  </div>
+                  <!-- 총합 부분 -->
+                  <div class="cal">
+                    <p id="total"></p>
+                    <label class="peo" for="peo"> / 총 인원수 : </label>
+                    <input
+                      id="people"
+                      type="number"
+                      value="1"
+                      onchange="autopay()"
+                    />
+                  </div>
+                  <div class="result">
+                    <p class="payment">= 인당 <span id="payment"></span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <footer class="py-3 my-4">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+              <li class="nav-item">
+                <a href="#" class="nav-link px-2 text-muted">Home</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link px-2 text-muted">정산하기</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link px-2 text-muted">계산기</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link px-2 text-muted">팀원소개</a>
+              </li>
+            </ul>
+            <p class="text text-center text-muted">© 2022 Company, Inc</p>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <!-- <script src="./index.js"></script> -->
+    <!-- <script src="/static/js/random.js"></script> -->
+    <script src="/static/js/random.js"></script>
+    <script src="/static/js/index.js"></script>
+    <script src="/static/js/cash.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
