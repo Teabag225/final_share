@@ -30,6 +30,9 @@ body {
   overflow: scroll;
 }
 
+ul {
+  padding-left: 0;
+}
 /* 메뉴바 */
 
 /* .sidenav {
@@ -303,13 +306,14 @@ img.logo {
   margin-top: 30px;
 } */
 
-#search {
+#search-item {
   width: 400px;
   height: 45px;
   border: 3px solid gold;
   border-radius: 30px;
   padding-left: 20px;
   margin-top: 20px;
+  /* margin: 0 300px; */
 }
 
 #submit {
@@ -491,3 +495,42 @@ a.nav-link {
   height: 100%;
   overflow: hidden;
 }
+
+/* 초기화 링크 텍스트 수정 */
+.card > a {
+  text-decoration: none;
+  color: black;
+}
+
+#cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+div.card {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 0.25rem;
+  margin-top: 50px;
+  margin-left: 20px;
+  width: 30%;
+}
+
+.hide {
+  display: none;
+}
+
+.checked {
+  color: orange;
+}
+/* 
+.card > .card-title {
+  margin-bottom: .25rem;
+} */
+
+/* .card > .card-text {
+  font-size: .8rem;
+}  */
+/* card 위치 auto-fill로 자동 위치 설정 */
+/* grid-template-columns: repeat(auto-fill); */
