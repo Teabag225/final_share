@@ -61,8 +61,8 @@
             <img class="menu-icon" src="/static/image/game.png" />
             <p class="p-none">정산게임</p>
             <div class="dropdown-container">
-              <a class="game" href="/dicegame.html">주사위 게임</a>
-              <a class="game" href="#">Link 2</a>
+              <a class="game" href="./dicegame.html">주사위 게임</a>
+              <a class="game" href="./scratch.html">보물 찾기</a>
               <a class="game" href="#">Link 3</a>
             </div>
           </a>
@@ -85,11 +85,11 @@
             <!-- <i class="fa fa-caret-down"></i> -->
           </a>
           <div class="toggle-container">
-            <a class="t-game" href="./dicegame.html">사다리게임</a>
-            <a class="t-game" href="#">Link 2</a>
+            <a class="t-game" href="./dicegame.html">주사위 게임</a>
+            <a class="t-game" href="./scratch.html">보물 찾기</a>
             <a class="t-game" href="#">Link 3</a>
           </div>
-          <a class="toggle-ls popup2">계산기</a>
+          <a class="toggle-ls popup">계산기</a>
           <a class="toggle-ls" href="#">팀원 소개</a>
         </div>
       </nav>
@@ -117,12 +117,11 @@
             class="search"
             type="text"
             name=""
-            onkeyup="search()"
             placeholder="찾고 싶은 메뉴를 입력해 주세요"
             aria-label="찾고 싶은 메뉴를 입력해 주세요"
             aria-describedby="button-addon2"
           />
-          <button id="submit" type="button" onclick="changeStyle()">
+          <button id="submit" type="button" onclick="search(), changeStyle()">
             <img src="/static/image/search.png" />
           </button>
         </form>
@@ -589,16 +588,13 @@
                 <a href="#" class="nav-link px-2 text-muted">Home</a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link px-2 text-muted">정산하기</a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link px-2 text-muted">계산기</a>
+                <a class="nav-link px-2 text-muted popup">계산기</a>
               </li>
               <li class="nav-item">
                 <a href="#" class="nav-link px-2 text-muted">팀원소개</a>
               </li>
             </ul>
-            <p class="text text-center text-muted">© 2022 Company, Inc</p>
+            <p class="text text-center text-muted">© 2022 Team G, Inc</p>
           </footer>
         </div>
       </div>

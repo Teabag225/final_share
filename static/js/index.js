@@ -40,17 +40,13 @@ iconMenu.addEventListener("click", function () {
 
 // Modal 창 구현
 const modal = document.querySelector(".modal");
-const btnModal = document.querySelector(".popup");
-const btnModal2 = document.querySelector(".popup2");
-btnModal.addEventListener("click", (e) => {
-  modal.style.display = "flex";
-  document.body.classList.add("stop-scroll");
-});
+const btnModal = document.querySelectorAll(".popup");
 
-btnModal2.addEventListener("click", (e) => {
-  modal.style.display = "flex";
-  document.body.classList.add("stop-scroll");
-});
+for (let i = 0; i < btnModal.length; i++) {
+  btnModal[i].addEventListener("click", (e) => {
+    modal.style.display = "flex";
+  });
+}
 
 // X 부분 클릭하면 창 닫기
 const closeBtn = modal.querySelector(".close-area");
@@ -102,7 +98,7 @@ function changeStyle() {
 }
 
 // 서치 기능
-const search = () => {
+function search() {
   const searchbox = document.getElementById("search-item").value.toUpperCase();
   const storeitems = document.getElementById("product-list");
   const product = document.querySelectorAll(".card");
@@ -121,4 +117,4 @@ const search = () => {
       }
     }
   }
-};
+}
