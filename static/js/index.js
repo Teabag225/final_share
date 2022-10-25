@@ -118,3 +118,11 @@ function search() {
     }
   }
 }
+
+//엔터키 기능
+// document.getElementById("search-item").addEventListener("keypress",function(e){
+//   e.preventDefault();
+//   if(e.key === '13'){
+//     document.getElementById("submit").click();
+//   }
+// });
