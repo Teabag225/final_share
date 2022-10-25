@@ -29,6 +29,15 @@ for (i = 0; i < t_dropdown.length; i++) {
   });
 }
 
+//토클 메뉴
+
+const iconMenu = document.querySelector(".icon");
+const toggleMenu = document.querySelector(".toggle-menu");
+
+iconMenu.addEventListener("click", function () {
+  toggleMenu.classList.toggle("d-none");
+});
+
 // Modal 창 구현
 const modal = document.querySelector(".modal");
 const btnModal = document.querySelector(".popup");
@@ -72,15 +81,6 @@ modal.addEventListener("click", (e) => {
     $(".lists").empty();
     document.body.classList.remove("stop-scroll");
   }
-});
-
-//토클 메뉴
-
-const iconMenu = document.querySelector(".icon");
-const toggleMenu = document.querySelector(".toggle-menu");
-
-iconMenu.addEventListener("click", function () {
-  toggleMenu.classList.toggle("d-none");
 });
 
 // 카드 숨기기
