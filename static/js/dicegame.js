@@ -66,6 +66,9 @@ function run() {
       min = numArray[i]; // 최소값 추가하기
     } else {
     }
+
+    var location = document.querySelector(".result").offsetTop;
+    window.scrollTo({ top: location, behavior: "smooth" });
   }
 
   let particles = [];
