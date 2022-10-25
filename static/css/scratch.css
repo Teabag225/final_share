@@ -302,3 +302,9 @@ img.toggle-logo {
     display: flex;
   }
 }
+
+@media (min-width: 1020px) {
+  .toggle-menu-list {
+    display: none;
+  }
+}

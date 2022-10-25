@@ -34,8 +34,9 @@
 body {
   background-color: white;
   font-family: "OTWelcomeBA";
-
-  overflow: scroll;
+  /* overflow: scroll; */
+  margin: 0;
+  padding: 0;
 }
 
 /* 내용물 정렬 */
@@ -175,7 +176,7 @@ nav.menu-list {
   justify-content: flex-end;
   /* text-align: center; */
   /* margin: 40px 60px 0 40px; */
-  margin-right: 60px;
+  margin: 20px 80px 20px 0px;
   font-family: "GyeonggiTitleM";
 }
 
@@ -194,7 +195,7 @@ img.menu-icon {
 }
 
 a.ls:hover .p-none {
-  margin-top: 12px;
+  margin-top: 8px;
   display: block;
 }
 
@@ -206,17 +207,12 @@ a.ls {
   text-decoration: none;
   color: black;
   cursor: pointer;
-  font-size: 20px;
-  padding: 10px 20px 0 20px;
+  font-size: 15px;
+  padding: 0 20px 0 0;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   /* margin-left: 20px; */
-}
-
-div.bg {
-  display: flex;
-  flex-direction: row;
 }
 
 a.game {
@@ -234,7 +230,6 @@ div.dropdown-container {
 }
 
 div.ul-list {
-  /* font-size: 1.2rem; */
   display: flex;
   flex-direction: row;
   /* margin: 50px; */
@@ -262,17 +257,24 @@ i.bi {
 .toggle-menu-list {
   width: 100vw;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   /* text-align: center; */
-  padding-left: 30px;
+  margin-left: 40px;
 }
 
 a.toggle-ls {
   text-decoration: none;
   color: black;
-  margin-top: 15px;
+  margin: 10px 0;
   /* margin-left: 350px; */
-  font-size: 20px;
+  font-size: 15px;
+  padding-left: 20px;
+}
+
+a.toggle-ls:hover {
+  transform: translateY(-5px);
+  cursor: pointer;
+  text-shadow: 10px 10px 10px #2f2d2d75;
 }
 
 a.t-game {
@@ -280,7 +282,9 @@ a.t-game {
   color: rgb(154, 151, 151);
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding-top: 10px;
+  font-size: 15px;
+  margin-left: 10px;
 }
 
 .d-none {
@@ -321,5 +325,11 @@ img.toggle-logo {
 
   div.icon {
     display: flex;
+  }
+}
+
+@media (min-width: 890px) {
+  .toggle-menu-list {
+    display: none;
   }
 }

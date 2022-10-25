@@ -327,6 +327,51 @@ a.nav-link {
     display: flex;
     cursor: pointer;
   }
+
+  div.modal.modal-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background-color: rgba(0, 0, 0, 0.3); */
+    /* box-shadow: 0 8px 32px 0 gray; */
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  div.modal-content {
+    background-color: white;
+    box-shadow: 0 8px 32px 0 gray;
+    backdrop-filter: blur(13.5px);
+    -webkit-backdrop-filter: blur(13.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: 480px;
+    height: 700px;
+    position: relative;
+    /* top: -100px; */
+    padding: 10px;
+  }
+
+  input#menu,
+  input#price {
+    border-radius: 10px;
+    border: 2px solid black;
+    width: 130px;
+    height: 30px;
+    padding-left: 10px;
+  }
+  div.result > p.payment {
+    margin-left: 250px;
+    font-size: 20px;
+  }
 }
 
 @media (max-width: 615px) {
@@ -357,6 +402,12 @@ a.nav-link {
   }
 }
 
+@media (min-width: 820px) {
+  .toggle-menu-list {
+    display: none;
+  }
+}
+
 /* Modal 창 구현 */
 
 .modal-overlay {
@@ -369,10 +420,10 @@ a.nav-link {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.3);
-  box-shadow: 0 8px 32px 0 gray;
-  backdrop-filter: blur(1.5px);
-  -webkit-backdrop-filter: blur(1.5px);
+  /* background-color: rgba(0, 0, 0, 0.3); */
+  /* box-shadow: 0 8px 32px 0 gray; */
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
@@ -392,8 +443,8 @@ a.nav-link {
 }
 
 .close-area {
-  display: inline;
-  float: right;
+  display: flex;
+  justify-content: flex-end;
   padding-right: 10px;
   cursor: pointer;
   text-shadow: 1px 1px 2px gray;
