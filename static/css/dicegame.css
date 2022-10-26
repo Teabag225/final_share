@@ -365,7 +365,7 @@ p.ls-text {
   width: 100vw;
   height: 100vh;
   background-color: white;
-  animation: hideLoadingScreen 2s 2s ease forwards;
+  animation: hideLoadingScreen 1s 1s ease forwards;
 }
 
 @keyframes hideLoadingScreen {
