@@ -1,519 +1,716 @@
 /* 폰트 */
 @font-face {
-  font-family: 'OKDDUNG';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/OKDDUNG.woff2') format('woff2');
+  font-family: "OKDDUNG";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/OKDDUNG.woff2")
+    format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'HBIOS-SYS';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/HBIOS-SYS.woff2') format('woff2');
+  font-family: "HBIOS-SYS";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/HBIOS-SYS.woff2")
+    format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 
-@import url('https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
+@font-face {
+  font-family: "GyeonggiTitleM";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/GyeonggiTitleM.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import url("https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css");
 
 /* 네온 */
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
 
 /* 태그 */
 body {
-
-    background : radial-gradient(ellipse, #13242f, hsl(0, 3%, 7%) 95%);
-    display: flex;
-    flex-direction:column;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-  }
-
-canvas{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-  }
-
-h1{
-    margin-top: 30px;
-    margin-bottom: 30px;
-    font-family: 'OKDDUNG';
-    letter-spacing: 15px; /*자간*/
-
-    /*네온컬러변화*/
-    --hue: 0;
-    -webkit-text-fill-color: transparent; 
-    -webkit-text-stroke-width: 4px;
-    -webkit-text-stroke-color: hsl(var(--hue), 50%, 95%);
-    text-shadow:
-      0 0 15px hsl(var(--hue), 60%, 90%, .80),
-      0 0 20px hsl(var(--hue), 70%, 80%, .85),
-      0 0 40px hsl(var(--hue), 80%, 70%, .90),
-      0 0 60px hsl(var(--hue), 90%, 60%, .95),
-      0 0 80px hsl(var(--hue), 100%, 50%, 1)
+  background: radial-gradient(ellipse, #13242f, hsl(0, 3%, 7%) 95%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
 }
-  
 
-input{
-    width: 100px;
-    margin-right: 20px;
-  }
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
 
- /* 클래스*/
+h1 {
+  /* margin-top: 50px; */
+  font-size: 40px;
+  margin-bottom: 50px;
+  font-family: "OKDDUNG";
+  letter-spacing: 15px; /*자간*/
+
+  /*네온컬러변화*/
+  --hue: 0;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 4px;
+  -webkit-text-stroke-color: hsl(var(--hue), 50%, 95%);
+  text-shadow: 0 0 15px hsl(var(--hue), 60%, 90%, 0.8),
+    0 0 20px hsl(var(--hue), 70%, 80%, 0.85),
+    0 0 40px hsl(var(--hue), 80%, 70%, 0.9),
+    0 0 60px hsl(var(--hue), 90%, 60%, 0.95),
+    0 0 80px hsl(var(--hue), 100%, 50%, 1);
+}
+
+input {
+  width: 120px;
+  height: 20px;
+  border-radius: 10px;
+  margin-right: 20px;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+
+/* 클래스*/
+.input {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 .input > label {
-    color: white;
-    font-family: 'HBIOS-SYS';
-  }
- 
-.div1 {
-    display : flex;
-    flex-direction:row;
-    
-    /* position: relative; */
-    /* position: absolute; */
-  }
-
-.div1 > .card{
-    position :relative;
-  }
-.div1 > .noshow {
-    display: none;
-  }
-  
-  
-.div1 > .show {
-    display: inline-block;
+  font-size: 20px;
+  padding-left: 20px;
+  color: white;
+  font-family: "HBIOS-SYS";
 }
-  
+
+.div1 {
+  display: flex;
+  flex-direction: row;
+
+  /* position: relative; */
+  /* position: absolute; */
+}
+
+.cards > .card {
+  position: relative;
+}
+.cards > .noshow {
+  display: none;
+}
+
+.cards > .show {
+  display: inline-block;
+}
+
 .cardimg {
-    
-    width: 90px;
-    height: 130px;
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-top: 200px;
-    box-shadow: -1rem 0 3rem #000;
-    cursor: pointer;
-  }
+  width: 90px;
+  height: 130px;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 200px;
+  box-shadow: -1rem 0 3rem #000;
+  cursor: pointer;
+}
 
-  
-.txt1{
-    font-family: "HBIOS-SYS";
-    position :absolute;
-    z-index : 400;
-    display: none;
-    font-size :larger;
-    cursor:pointer;
-    color: white;
-  }
+.txt1 {
+  font-family: "HBIOS-SYS";
+  position: absolute;
+  z-index: 400;
+  display: none;
+  font-size: larger;
+  cursor: pointer;
+  color: white;
+}
 
+.left {
+  float: left;
+  margin-top: 230px;
+  /* margin-left: 50px; */
+}
 
-.right{
-    transform: scale(0.06) ;
-    animation: upDownPointer 1s linear infinite;
-    float: right;     
-    /* left: 100px; */
-  }
+.txt2 {
+  white-space: wrap;
+  position: absolute;
+  z-index: 1400;
+  text-align: center;
+  writing-mode: horizontal-tb;
+  margin: 230px 65px;
+  transform: rotate(90deg) rotateY(180deg);
+  font-size: 15pt;
+  cursor: pointer;
+}
 
-.left{
-    float: left;
-    margin-top: 230px;
-    margin-left: 50px;
-  }
+p.txt2p {
+  width: 100px;
+  font-size: 10px;
+  margin-top: 65px;
+}
 
-  .txt2 {
-    white-space: nowrap; 
-    position :absolute;
-    z-index : 1400;
-    text-align :center;
-    writing-mode:horizontal-tb;
-    margin : 230px 65px;
-    transform: rotate(90deg) rotateY(180deg);
-    font-size :15pt;
-    cursor:pointer;
-  }
+.btn > button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  z-index: 3000;
+}
 
-  .btn > button{
-    border: none;
-    background: none;
-    cursor: pointer;
-    z-index: 3000;
-  }
+.div2 {
+  /* flex-direction: row; */
+  font-family: "HBIOS-SYS";
+  flex-direction: column;
+  /* margin-left: 280px; */
+}
 
-  .div2{
-    /* flex-direction: row; */
-    font-family: "HBIOS-SYS";
-    flex-direction: column;
-    /* margin-left: 280px; */
-  }
+.div2_1 {
+  display: none;
+  flex-direction: row;
+  /* position: relative; */
+  margin-right: 180px;
+  z-index: 300;
+}
 
-  .div2_1{
-    display: none;
-    flex-direction: row;
-    /* position: relative; */
-    margin-left: 00px;
-    z-index: 300;
-    
-  }
+.div2_2 {
+  display: none;
+  flex-direction: row;
+  /* position: relative; */
+  margin-left: 00px;
+  z-index: 300;
+}
 
-  .div2_2{
-    display: none;
-    flex-direction: row;
-    /* position: relative; */
-    margin-left: 00px;
-    z-index: 300;
-    
-  }
+.btnLeft {
+  color: antiquewhite;
+  float: left;
+}
 
-  .btnLeft{
-    color: antiquewhite;
-    float: left;
-  }
+.btnRight {
+  color: antiquewhite;
+  float: right;
+  transform: translateY(55px);
+}
 
-  .btnRight{
-    color: antiquewhite;
-    float: right;
-    transform: translateY(55px);
-  }
-  
-  button img {
-    margin-top: 20px;
-    width: 30px;
-    height: 30px;
-   
-  ;
-  }
-  .btn{
-    width: 400px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-  }
+button img {
+  margin-top: 20px;
+  width: 35px;
+  height: 35px;
+}
+.btn {
+  width: 400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
 
-  /* 아이디 */
-#btnY, #btnN{
+.cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+/* 아이디 */
+#btnY,
+#btnN {
   background: none;
   border: none;
   transform: scale(0.7) translateY(63px);
 }
 
-  #submitBtn {
-    width: 50px;
-    transform: scaleX(2);
-    margin-left : 10px;
-    margin-right : 10px;
-    /* height : 90px; */
-  }
+img#pointer {
+  transform: scale(0.06);
+  animation: upDownPointer 1s linear infinite;
+  float: right;
+  /* margin-right: 100px; */
+  /* left: 100px; */
+}
 
-  #reset {
-    transform: scale(1.1);
-  }
+#submitBtn {
+  width: 50px;
+  transform: scaleX(2);
+  margin-left: 10px;
+  margin-right: 10px;
+  /* height : 90px; */
+}
 
+#reset {
+  transform: scale(1.1);
+}
+
+/* #thisone {
+  margin-right: 90px;
+} */
 
 /* 애니메이션 클래스 */
-  
+
 .slideUp {
-    animation: slideUp 1s;
-    animation-fill-mode: forwards;
-  }
-  
+  animation: slideUp 1s;
+  animation-fill-mode: forwards;
+}
+
 .slideDown {
-    animation: slideDown 1s;
-    animation-fill-mode: forwards;
-  }
-  
+  animation: slideDown 1s;
+  animation-fill-mode: forwards;
+}
+
 .rotateCard {
-    animation: rotateCard 1s linear 1;
-    animation-fill-mode: forwards;
-    margin-left: 210px;
-    margin-bottom: 10px;
-  }
-  
-.shuffle1{
-    animation: shuffle1 1.3s linear 1;
-    position:absolute;
-  }
-.shuffle2{
-    animation: shuffle2 1.3s linear 1;
-    position:absolute;
-  }
-.shuffle3{
-    animation: shuffle3 1.3s linear 1;
-    position:absolute;
-  }
-.shuffle4{
-    animation: shuffle4 1.3s linear 1;
-    position:absolute;
-  }
-.shuffle5{
-    animation: shuffle5 1.3s linear 1;
-    position:absolute;
-  }
-.shuffle6{
-    animation: shuffle6 1.3s linear 1;
-    position:absolute;
-  }
-  
-.upDown{
-    animation: upDown 1s linear infinite;
-  }
-  
-  /* 애니메이션 정의 */
-  @keyframes slideUp {
-    from {
-      transform: translateY(0);
-    }
-  
-    to {
-      transform: translateY(-60px) rotate(-90deg);
-    }
-  }
-  
-  @keyframes slideDown {
-    from {
-      transform: translateY(-60px) rotate(-90deg);
-    }
-  
-    to {
-      transform: rotate(0) translateY(0);
-    }
-  }
-  
-  @keyframes rotateCard {
-    from {
-      transform: rotate(90deg)skew(0);
-    }
-    
-    to{
-      transform-style: preserve-3d;
-      z-index: 1000;
-      transform: translateX(150px) rotate(90deg) rotateY(-180deg) scale(3);
-    }
-  }
-  
-  @keyframes upDown{
-    0%{
-      transform: translateY(0) scaleX(2);
-    }
-    25%{
-      transform: translateY(10%) scaleX(2);
-    }
-    50%{
-      transform: translateY(0%) scaleX(2);
-    }
-    70%{
-      transform: translateY(-10%) scaleX(2);
-    }
-    100%{
-      transform: translateY(0) scaleX(2);
-    }
-  }
-
-  @keyframes upDownPointer{
-    0%{
-      transform: translateX(-90px) translateY(-273px) scale(0.06);
-    }
-    25%{
-      transform: translateX(-90px) translateY(-265px) scale(0.06);
-    }
-    50%{
-      transform: translateX(-90px) translateY(-273px) scale(0.06);
-    }
-    70%{
-      transform: translateX(-90px) translateY(-281px) scale(0.06);
-    }
-    100%{
-      transform: translateX(-90px) translateY(-273px) scale(0.06);
-    }
-  }
-
-
-  @keyframes shuffle1{
-    0%{
-        transform: translateX(0);
-        z-index: -3;
-  }
-    25% {
-      transform: translateX(-80%);
-      z-index: 0;
-  }
-    50%{
-      transform: translateX(0);
-      z-index: 2;
-  }
-    75%{
-      transform: translateX(80%);
-      z-index:0 ;
-
-    }
-    100%{
-      transform:translateX(0);
-    }
-
-}
-  
-  @keyframes shuffle2{
-    0%{
-      transform: translateX(0);
-  }
-    25%{
-      transform: translateX(80%);
-      z-index: -1;
-  }
-    50%{
-      transform: translateX(0);
-    }
-    75%{
-      transform: translateX(-80%);
-      z-index: -1;
-    }
-    100%{
-      transform: translateX(0);
-    }
+  animation: rotateCard 1s linear 1;
+  animation-fill-mode: forwards;
+  margin-left: 210px;
+  margin-bottom: 10px;
 }
 
+.shuffle1 {
+  animation: shuffle1 1.3s linear 1;
+  position: absolute;
+}
+.shuffle2 {
+  animation: shuffle2 1.3s linear 1;
+  position: absolute;
+}
+.shuffle3 {
+  animation: shuffle3 1.3s linear 1;
+  position: absolute;
+}
+.shuffle4 {
+  animation: shuffle4 1.3s linear 1;
+  position: absolute;
+}
+.shuffle5 {
+  animation: shuffle5 1.3s linear 1;
+  position: absolute;
+}
+.shuffle6 {
+  animation: shuffle6 1.3s linear 1;
+  position: absolute;
+}
 
-  @keyframes shuffle3{
-    0% {
-      transform: translateX(0);
-      z-index: 5;
-    }
-    25%{
-      transform: translateX(-100%);
-      z-index: -1;
-    }
-    50%{
-      transform: translateX(0) ;
-    }
-    75%{
-      transform: translateX(100%);
-      z-index: 2;
-    }
-    100%{
-      transform:  translateX(0);
-    }
-  }
-  
-  @keyframes shuffle4{
-    0% {
-      transform: translateX(0);
-  
-      
-    }
-    25%{
-      transform: translateX(10%);
-      z-index: 5;
-    }
-    50%{
-      transform: translateX(0);
-      z-index: -1;
-    }
-    75%{
-      transform: translateX(-10%);
-      z-index: 3;
-    }
-    100%{
-      transform: translateX(0);
-    }
-  }
-  
-  @keyframes shuffle5{
-    0% {
-      transform: translateX(0);
-    }
-    25%{
-      transform: translateX(-110%);
-    }
-    50%{
-      transform: translateX(0);
-    }
-    75%{
-      transform: translateX(110%);
-    }
-    100%{
-      transform: translateX(0);
-    }
-  }
-  
-  @keyframes shuffle6{
-    0% {
-      transform: translateX(0);
-    }
-    25%{
-      transform: translateX(40%);
-      z-index: 3;
-    }
-    50%{
-      transform: translateX(0);
-    }
-    75%{
-      transform: translateX(-40%);
-      z-index: 2;
-    }
-    100%{
-      transform: translateX(0) ;
-    }
-  }
-  
+.upDown {
+  animation: upDown 1s linear infinite;
+}
 
-  /* 팝업창 */
-  .modal {
-    position: absolute;
-    z-index: 5000;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: auto;
-    /* display: inline-flex; */
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    padding: 1.6rem 3rem;
-    border: 3px solid black;
-    border-radius: 5px;
-    background: lightgrey;
-    box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.9);
-    font-family: "HBIOS-SYS";
+/* 애니메이션 정의 */
+@keyframes slideUp {
+  from {
+    transform: translateY(0);
   }
-  .message {
-    font-size:1.1rem;
-    margin-bottom: 1.6rem;
-    margin-top: 0;
+
+  to {
+    transform: translateY(-60px) rotate(-90deg);
   }
-  .popBtn {
-    color:inherit;
-      font-family:inherit;
-    font-size: inherit;
-    background: gainsboro;
-    padding: 0.3rem 3.4rem;
-    border: 3px solid black;
-    margin-right: 2.6rem;
-    box-shadow: 0 0 0 black;
-    transition: all 0.2s;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-60px) rotate(-90deg);
   }
-  
-  .popBtn:last-child {
+
+  to {
+    transform: rotate(0) translateY(0);
+  }
+}
+
+@keyframes rotateCard {
+  from {
+    transform: rotate(90deg) skew(0);
+  }
+
+  to {
+    transform-style: preserve-3d;
+    z-index: 1000;
+    transform: translateX(150px) rotate(90deg) rotateY(-180deg) scale(3);
+  }
+}
+
+@keyframes upDown {
+  0% {
+    transform: translateY(0) scaleX(2);
+  }
+  25% {
+    transform: translateY(10%) scaleX(2);
+  }
+  50% {
+    transform: translateY(0%) scaleX(2);
+  }
+  70% {
+    transform: translateY(-10%) scaleX(2);
+  }
+  100% {
+    transform: translateY(0) scaleX(2);
+  }
+}
+
+@keyframes upDownPointer {
+  0% {
+    transform: translateX(-90px) translateY(-273px) scale(0.06);
+  }
+  25% {
+    transform: translateX(-90px) translateY(-265px) scale(0.06);
+  }
+  50% {
+    transform: translateX(-90px) translateY(-273px) scale(0.06);
+  }
+  70% {
+    transform: translateX(-90px) translateY(-281px) scale(0.06);
+  }
+  100% {
+    transform: translateX(-90px) translateY(-273px) scale(0.06);
+  }
+}
+
+@keyframes shuffle1 {
+  0% {
+    transform: translateX(0);
+    z-index: -3;
+  }
+  25% {
+    transform: translateX(-80%);
+    z-index: 0;
+  }
+  50% {
+    transform: translateX(0);
+    z-index: 2;
+  }
+  75% {
+    transform: translateX(80%);
+    z-index: 0;
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes shuffle2 {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(80%);
+    z-index: -1;
+  }
+  50% {
+    transform: translateX(0);
+  }
+  75% {
+    transform: translateX(-80%);
+    z-index: -1;
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes shuffle3 {
+  0% {
+    transform: translateX(0);
+    z-index: 5;
+  }
+  25% {
+    transform: translateX(-100%);
+    z-index: -1;
+  }
+  50% {
+    transform: translateX(0);
+  }
+  75% {
+    transform: translateX(100%);
+    z-index: 2;
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes shuffle4 {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(10%);
+    z-index: 5;
+  }
+  50% {
+    transform: translateX(0);
+    z-index: -1;
+  }
+  75% {
+    transform: translateX(-10%);
+    z-index: 3;
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes shuffle5 {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-110%);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  75% {
+    transform: translateX(110%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes shuffle6 {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(40%);
+    z-index: 3;
+  }
+  50% {
+    transform: translateX(0);
+  }
+  75% {
+    transform: translateX(-40%);
+    z-index: 2;
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* 팝업창 */
+.modal {
+  position: absolute;
+  z-index: 5000;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  /* display: inline-flex; */
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.6rem 3rem;
+  border: 3px solid black;
+  border-radius: 5px;
+  background: lightgrey;
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.9);
+  font-family: "HBIOS-SYS";
+}
+.message {
+  font-size: 1.1rem;
+  margin-bottom: 1.6rem;
+  margin-top: 0;
+}
+.popBtn {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  background: gainsboro;
+  padding: 0.3rem 3.4rem;
+  border: 3px solid black;
+  margin-right: 2.6rem;
+  box-shadow: 0 0 0 black;
+  transition: all 0.2s;
+}
+
+.popBtn:last-child {
+  margin: 0;
+}
+
+.popBtn:hover {
+  box-shadow: 0.4rem 0.4rem 0 black;
+  transform: translate(-0.4rem, -0.4rem);
+}
+
+.popBtn:active {
+  box-shadow: 0 0 0 black;
+  transform: translate(0, 0);
+}
+
+.options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* 메뉴바 */
+
+nav.menu-list {
+  width: 100vw;
+  /* height: 100%; */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  /* text-align: center; */
+  /* margin: 40px 60px 0 40px; */
+  margin: 0 60px 0 0px;
+  padding: 20px 0 20px 0;
+  font-family: "GyeonggiTitleM";
+  /* background-color: #eb6383; */
+}
+
+div.icon {
+  display: none;
+  /* font-size: 20px; */
+}
+
+img.menu-icon {
+  width: 60px;
+  height: 60px;
+}
+
+.p-none {
+  display: none;
+}
+
+a.ls:hover .p-none {
+  margin-top: 12px;
+  display: block;
+  font-size: 20px;
+}
+
+a.ls:hover .menu-icon {
+  display: none;
+}
+
+a.ls {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 0 20px 0 0;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  /* margin-left: 20px; */
+}
+
+a.game {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+  padding-bottom: 15px;
+  font-size: 17px;
+  text-align: center;
+}
+
+div.dropdown-container {
+  display: none;
+}
+
+div.ul-list {
+  display: flex;
+  flex-direction: row;
+  /* margin: 50px; */
+  text-decoration: none;
+  color: black;
+
+  /* margin-top: 10px; */
+  /* font-weight: 300; */
+}
+
+/* 토글메뉴 */
+
+.active {
+  color: black;
+  /* margin: 0 30px; */
+}
+
+i.bi {
+  /* margin-top: 3px; */
+  color: white;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.toggle-menu-list {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  /* text-align: center; */
+  margin-left: 40px;
+}
+
+a.toggle-ls {
+  text-decoration: none;
+  color: white;
+  margin: 10px 0;
+  /* margin-left: 350px; */
+  font-size: 15px;
+  padding-left: 20px;
+}
+
+a.toggle-ls:hover {
+  transform: translateY(-5px);
+  cursor: pointer;
+  text-shadow: 10px 10px 10px #fffafa75;
+}
+
+a.t-game {
+  text-decoration: none;
+  color: rgb(219, 215, 215);
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+  font-size: 15px;
+  margin-left: 10px;
+}
+
+.d-none {
+  display: none;
+}
+
+.toggle-dropdown-btn {
+  cursor: pointer;
+}
+
+.toggle-container {
+  display: none;
+}
+
+img.toggle-logo {
+  display: none;
+}
+
+@media (max-width: 890px) {
+  body {
     margin: 0;
   }
-  
-  .popBtn:hover {
-    box-shadow: 0.4rem 0.4rem 0 black;
-    transform: translate(-0.4rem, -0.4rem);
-  }
-  
-  .popBtn:active {
-    box-shadow: 0 0 0 black;
-    transform: translate(0, 0);
-  }
-  
-  .options {
+  nav.menu-list {
+    width: 100vw;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    padding-left: 30px;
+    margin-top: 20px;
+    font-family: "GyeonggiTitleM";
   }
+  div.ul-list {
+    display: none;
+  }
+
+  img.logo {
+    display: none;
+  }
+
+  div.icon {
+    margin-left: 50px;
+    display: flex;
+    color: white;
+  }
+}
+
+@media (min-width: 890px) {
+  .toggle-menu-list {
+    display: none;
+  }
+}

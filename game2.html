@@ -8,121 +8,182 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="./static/css/newgame2.css" />
-
-
+    <!-- Bootstrap Icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
   </head>
   <body>
-    <!-- <canvas id="canvas"></canvas> --> <!--불꽃놀이 효과-->
+    <!-- <canvas id="canvas"></canvas> -->
+    <!--불꽃놀이 효과-->
 
+    <nav class="menu-list">
+      <div href="#" class="icon"><i class="bi bi-list"></i>MENU</div>
+      <div class="ul-list">
+        <a class="ls hover" href="/index.html">
+          <img class="menu-icon" src="/static/image/logo.png" />
+          <p class="p-none">HOME</p>
+        </a>
+        <a class="ls dropdown-btn">
+          <img class="menu-icon" src="/static/image/game.png" />
+          <p class="p-none">복불복 게임</p>
+          <div class="dropdown-container">
+            <a class="game" href="./dicegame.html">주사위 게임</a>
+            <a class="game" href="./scratch.html">보물 찾기</a>
+            <a class="game" href="./game2.html">카드 뽑기</a>
+          </div>
+        </a>
+      </div>
+    </nav>
+
+    <!-- 토글 메뉴 -->
+    <nav class="toggle-menu d-none">
+      <div class="toggle-menu-list">
+        <a class="toggle-ls" href="./index.html">HOME</a>
+        <a class="toggle-ls toggle-dropdown-btn">
+          복불복 게임
+          <!-- <i class="fa fa-caret-down"></i> -->
+        </a>
+        <div class="toggle-container">
+          <a class="t-game" href="./dicegame.html">주사위 게임</a>
+          <a class="t-game" href="./scratch.html">보물 찾기</a>
+          <a class="t-game" href="./map.html">카드 뽑기</a>
+        </div>
+      </div>
+    </nav>
     <h1>CARD GAME</h1>
-    
+
     <!--User-->
     <div class="input">
-        <label>User1</label>
-        <input id="user1" type="text" />
-        <label>User2</label>
-        <input id="user2" type="text" />
+      <label>User1</label>
+      <input id="user1" type="text" />
+      <label>User2</label>
+      <input id="user2" type="text" />
     </div>
 
     <!--상단 버튼(유저추가, 유저제거, 실행, 셔플, 새로고침) -->
     <div class="btn">
-        <button class="add" type="button" onclick="add()"><img src="./static/image/plus.png" alt="유저추가"></button>
-        <button class="remove" type="button" onclick="remove()"><img src="./static/image/remove.png" alt="유저제거"></button>
-        <button class="upDown" id="submitBtn" type="submit" onclick="run(), shuffle()"><img src="./static/image/start-button.png" class="start-button" alt="실행버튼"></button>
-        <button id="shuffle"><img src="/static/image/shuffle.png" onclick="shuffle()" alt="셔플버튼"></button>
-        <button id="reset" type="button" onclick="reset()"><img src="./static/image/reset.png" alt="새로고침"></button>
+      <button class="add" type="button" onclick="add()">
+        <img src="./static/image/plus.png" alt="유저추가" />
+      </button>
+      <button class="remove" type="button" onclick="remove()">
+        <img src="./static/image/remove.png" alt="유저제거" />
+      </button>
+      <button
+        class="upDown"
+        id="submitBtn"
+        type="submit"
+        onclick="run(), shuffle()"
+      >
+        <img
+          src="./static/image/start-button.png"
+          class="start-button"
+          alt="실행버튼"
+        />
+      </button>
+      <button id="shuffle">
+        <img
+          src="/static/image/shuffle.png"
+          onclick="shuffle()"
+          alt="셔플버튼"
+        />
+      </button>
+      <button id="reset" type="button" onclick="reset()">
+        <img src="./static/image/reset.png" alt="새로고침" />
+      </button>
     </div>
-    
+
     <!-- 게임실행 -->
     <div class="div1" id="container">
       <!--카드 추출 텍스트 등장-->
       <div class="txt1">
         <div class="left"><p>Click Here</p></div>
-        <div class="right"><img src="./static/image/pointer.png" id="pointer" alt="포인터"></div>
+        <div class="right">
+          <img src="./static/image/pointer.png" id="pointer" alt="포인터" />
+        </div>
       </div>
       <!-- 카드 -->
-      <div class="card" id="c01">
-        <div class="txt2"><p></p></div>
-        <img
-          src="./static/image/cardimg.png"
-          class="cardimg"
-          id="card1"
-          alt=""
-        />
-      </div>
-      <div class="card" id="c02">
-        <div class="txt2"><p></p></div>
-        <img
-          src="./static/image/cardimg.png"
-          
-          class="cardimg"
-          id="card2"
-          alt=""
-        />
-      </div>
-      <div class="card noshow" id="c03">
-        <div class="txt2"><p></p></div>
-        <img
-          src="./static/image/cardimg.png"
-          
-          class="cardimg"
-          id="card3"
-          alt=""
-        />
-      </div>
-      <div class="card noshow" id="c04">
-        <div class="txt2"><p></p></div>
-        <img
-          src="./static/image/cardimg.png"
-          
-          class="cardimg"
-          id="card4"
-          alt=""
-        />
-      </div>
-      <div class="card noshow" id="c05">
-        <div class="txt2"><p></p></div>
-        <img
-          src="./static/image/cardimg.png"
-          
-          class="cardimg"
-          id="card5"
-          alt=""
-        />
-      </div>
-      <div class="card noshow" id="c06">
-        <div class="txt2"><p></p></div>
-        <img
-          src="./static/image/cardimg.png"
-          class="cardimg"
-          id="card6"
-          alt=""
-        />
+      <div class="cards">
+        <div class="card" id="c01">
+          <div class="txt2"><p class="txt2p"></p></div>
+          <img
+            src="./static/image/cardimg.png"
+            class="cardimg"
+            id="card1"
+            alt=""
+          />
+        </div>
+        <div class="card" id="c02">
+          <div class="txt2"><p class="txt2p"></p></div>
+          <img
+            src="./static/image/cardimg.png"
+            class="cardimg"
+            id="card2"
+            alt=""
+          />
+        </div>
+        <div class="card noshow" id="c03">
+          <div class="txt2"><p></p></div>
+          <img
+            src="./static/image/cardimg.png"
+            class="cardimg"
+            id="card3"
+            alt=""
+          />
+        </div>
+        <div class="card noshow" id="c04">
+          <div class="txt2"><p></p></div>
+          <img
+            src="./static/image/cardimg.png"
+            class="cardimg"
+            id="card4"
+            alt=""
+          />
+        </div>
+        <div class="card noshow" id="c05">
+          <div class="txt2"><p></p></div>
+          <img
+            src="./static/image/cardimg.png"
+            class="cardimg"
+            id="card5"
+            alt=""
+          />
+        </div>
+        <div class="card noshow" id="c06">
+          <div class="txt2"><p></p></div>
+          <img
+            src="./static/image/cardimg.png"
+            class="cardimg"
+            id="card6"
+            alt=""
+          />
+        </div>
       </div>
     </div>
-
 
     <!-- 카드 추출시 등장하는 버튼(좌) & 텍스트(우) -->
     <div class="div2">
       <div class="div2_1">
         <div class="btnLeft">
-          <button id="btnY"><img class="btnimg" src="/static/image/check.png" /></button>
+          <button id="btnY">
+            <img class="btnimg" src="/static/image/check.png" />
+          </button>
         </div>
         <div class="btnRight">
           <p id="thisone">"이걸로 계산해주세요"</p>
         </div>
       </div>
-      <br>
+      <br />
       <div class="div2_2">
         <div class="btnLeft">
-          <button id="btnN"><img src="/static/image/cancel.png"/></button>
+          <button id="btnN"><img src="/static/image/cancel.png" /></button>
         </div>
         <div class="btnRight">
           <p id="notthisone">"아냐, 다시 뽑아줘요."</p>
         </div>
       </div>
     </div>
-
 
     <!-- 팝업창 -->
     <div class="modal">
@@ -131,28 +192,24 @@
         <button class="popBtn" id="popBtnY">Okay</button>
       </div>
     </div>
+  </body>
 
-</body>
-
-
-<!-- 스크립트 -->
+  <!-- 스크립트 -->
   <!-- JQUERY -->
   <script
-      src="https://code.jquery.com/jquery-3.6.1.min.js"
-      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
-      crossorigin="anonymous">
-  </script>
-  
+    src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+    crossorigin="anonymous"
+  ></script>
+
   <!-- gsap Library CDN -->
-  <script 
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" 
-      integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw==" 
-      crossorigin="anonymous" 
-      referrerpolicy="no-referrer">
-  </script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"
+    integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
 
   <!-- JavaSript -->
   <script src="./static/js/newgame2.js"></script>
-    
-    
 </html>
