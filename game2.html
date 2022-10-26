@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./newgame2.css" />
+
+
+  </head>
+  <body>
+    <!-- <canvas id="canvas"></canvas> -->
+    <h1>CARD GAME</h1>
+    
+    <div class="input">
+          <label>User1</label>
+          <input id="user1" type="text" />
+
+          <label>User2</label>
+          <input id="user2" type="text" />
+    </div>
+    <div class="btn">
+      <button class="add" type="button" onclick="add()"><img src="./static/image/plus.png" alt=""></button>
+      <button class="remove" type="button" onclick="remove()"><img src="./static/image/remove.png" alt=""></button>
+      <button class="upDown" id="submitBtn" type="submit" onclick="run()"><img src="./static/image/start-button.png" alt=""></button>
+      <button id="shuffle"><img src="/static/image/shuffle.png" onclick="shuffle()" alt="셔플버튼"></button>
+      <button id="reset" type="button" onclick="reset()"><img src="./static/image/reset.png" alt=""></button>
+    </div>
+    
+    <div class="div1">
+      <div class="txt1"><p>Click Here</p></div>
+      <div class="card" id="c01"><div class="txt2"><p></p></div>
+        <img
+          src="./static/image/cardimg.png"
+          class="cardimg"
+          id="card1"
+          alt=""
+        />
+      </div>
+      <div class="card" id="c02">
+        <div class="txt2"><p></p></div>
+        <img
+          src="./static/image/cardimg.png"
+          
+          class="cardimg"
+          id="card2"
+          alt=""
+        />
+      </div>
+      <div class="card noshow" id="c03">
+        <img
+          src="./static/image/cardimg.png"
+          
+          class="cardimg"
+          id="card3"
+          alt=""
+        />
+      </div>
+      <div class="card noshow" id="c04">
+        <img
+          src="./static/image/cardimg.png"
+          
+          class="cardimg"
+          id="card4"
+          alt=""
+        />
+      </div>
+      <div class="card noshow" id="c05">
+        <img
+          src="./static/image/cardimg.png"
+          
+          class="cardimg"
+          id="card5"
+          alt=""
+        />
+      </div>
+      <div class="card noshow" id="c06">
+        <img
+          src="./static/image/cardimg.png"
+          class="cardimg"
+          id="card6"
+          alt=""
+        />
+      </div>
+      <div class="div2">
+        <button id="btnY">
+          <img class="btnimg" src="/static/image/check.png" /></button>
+        <button id="btnN"><img src="/static/image/cancel.png"/></button>
+      </div>
+    
+    </div>
+
+    <div class="modal">
+      <p class="message"></p>
+      <div class="options">
+        <button class="popBtn" id="popBtnY">Okay</button>
+        <!-- <button class="popBtn">No</button> -->
+      </div>
+    </div>
+
+</body>
+    <!-- gsap Library CDN -->
+    <script 
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" 
+      integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw==" 
+      crossorigin="anonymous" 
+      referrerpolicy="no-referrer"
+    ></script>
+     <!-- JavaSript -->
+     <script src="./newgame2.js"></script>
+     <!-- JQUERY -->
+     <script
+       src="https://code.jquery.com/jquery-3.6.1.min.js"
+       integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+       crossorigin="anonymous"
+     ></script>
+    
+</html>

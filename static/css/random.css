@@ -29,11 +29,13 @@ body {
   width: 150px;
   height: 50px;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .menu_slot {
   position: absolute;
   top: 30%;
+  cursor: pointer;
 }
 
 @keyframes slide {
@@ -117,6 +119,7 @@ body {
   height: 50px * 16;
   animation: slide 4s infinite;
   color: black;
+  cursor: pointer;
 }
 
 .slide_box li {
@@ -126,6 +129,7 @@ body {
   align-items: center;
   justify-content: center;
   font-size: 30px;
+  cursor: pointer;
   font-weight: bold;
 }
 
@@ -187,6 +191,7 @@ em {
   font-size: 40px;
   color: black;
   transition: 0.5s;
+  cursor: pointer;
 }
 
 .menu_slot:hover {
