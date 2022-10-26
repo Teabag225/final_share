@@ -19,24 +19,16 @@
       <div class="ul-list">
         <a class="ls hover" href="/index.html">
           <img class="menu-icon" src="/static/image/logo.png" />
-          <p class="p-none">홈</p>
+          <p class="p-none">HOME</p>
         </a>
         <a class="ls dropdown-btn">
           <img class="menu-icon" src="/static/image/game.png" />
-          <p class="p-none">정산게임</p>
+          <p class="p-none">복불복 게임</p>
           <div class="dropdown-container">
             <a class="game" href="./dicegame.html">주사위 게임</a>
             <a class="game" href="./scratch.html">보물 찾기</a>
             <a class="game" href="./game2.html">카드 뽑기</a>
           </div>
-        </a>
-        <a class="ls hover popup">
-          <img class="menu-icon" src="/static/image/calculator.png" />
-          <p class="p-none">계산기</p>
-        </a>
-        <a class="ls hover" href="./map.html">
-          <img class="menu-icon" src="/static/image/map.png" />
-          <p class="p-none">맛집 지도</p>
         </a>
       </div>
     </nav>
@@ -44,9 +36,9 @@
     <!-- 토글 메뉴 -->
     <nav class="toggle-menu d-none">
       <div class="toggle-menu-list">
-        <a class="toggle-ls" href="./index.html">홈</a>
+        <a class="toggle-ls" href="./index.html">HOME</a>
         <a class="toggle-ls toggle-dropdown-btn">
-          정산 게임
+          복불복 게임
           <!-- <i class="fa fa-caret-down"></i> -->
         </a>
         <div class="toggle-container">
@@ -54,14 +46,20 @@
           <a class="t-game" href="./scratch.html">보물 찾기</a>
           <a class="t-game" href="./map.html">카드 뽑기</a>
         </div>
-        <a class="toggle-ls popup">계산기</a>
-        <a class="toggle-ls" href="#">팀원 소개</a>
       </div>
     </nav>
     <div class="a">
       <div class="wrapper">
-        <h1 class="name">주사위 던지기</h1>
-        <p>
+        <h1 id="container">
+          <span>주</span>
+          <span>사</span>
+          <span>위</span>
+          <span></span>
+          <span>던</span>
+          <span>지</span>
+          <span>기</span>
+        </h1>
+        <p class="tip">
           <span class="tip">Tip.</span> 주사위를 던져 가장 작은 수가 나온 사람이
           당첨입니다.
         </p>
@@ -145,5 +143,6 @@
     </div>
 
     <script src="/static/js/dicegame.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
   </body>
 </html>

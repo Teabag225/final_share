@@ -72,6 +72,7 @@ img.onload = function () {
     .drawImage(img, 0, 0, scratch.width, scratch.height);
 };
 img.src = "static/image/food.jpg";
+img.style.borderRadius = "20";
 
 // 각각의 Canvas 요소들에 접근을 위해, 배열 형태로 선언하고
 // 해당 배열에 접근하여 캔버스를 처리
@@ -207,7 +208,15 @@ function add() {
     cnt++;
     run();
   } else {
-    alert("최대 6인입니다.");
+    Swal.fire({
+      title: "User는 최대 6명까지 가능합니다.",
+      showClass: {
+        popup: "animate__animated animate__fadeInDown",
+      },
+      hideClass: {
+        popup: "animate__animated animate__fadeOutUp",
+      },
+    });
     run();
   }
 
@@ -234,7 +243,15 @@ function remove() {
     cnt--;
     run();
   } else {
-    alert("최소 2인입니다.");
+    Swal.fire({
+      title: "User는 최소 2명이 필요합니다.",
+      showClass: {
+        popup: "animate__animated animate__fadeInDown",
+      },
+      hideClass: {
+        popup: "animate__animated animate__fadeOutUp",
+      },
+    });
     run();
   }
 }

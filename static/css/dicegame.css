@@ -1,23 +1,15 @@
-/* @font-face {
-  font-family: "Cafe24Ssurround";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff")
-    format("woff");
-  font-weight: normal;
-  font-style: normal;
-} */
-
 @font-face {
-  font-family: "OTWelcomeBA";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeBA.woff2")
-    format("woff2");
+  font-family: "KOTRA_BOLD-Bold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.1/KOTRA_BOLD-Bold.woff")
+    format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "HBIOS-SYS";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/HBIOS-SYS.woff2")
-    format("woff2");
+  font-family: "establishRetrosansOTF";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112@1.0/establishRetrosansOTF.woff")
+    format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -30,36 +22,18 @@
   font-style: normal;
 }
 
-/* 배경색 */
+/* 배경 */
 body {
-  font-family: "OTWelcomeBA";
-  /* overflow: scroll; */
+  font-family: "GyeonggiTitleM";
   margin: 0;
   padding: 0;
+  background-color: #eca0b1;
 }
 
 /* 내용물 정렬 */
 .wrapper {
-  /* width: 80%; */
   margin: auto;
   text-align: center;
-}
-
-/* hr {
-  border: 1px dashed;
-} */
-
-div.line {
-  position: relative;
-  margin: 0 250px;
-  border-bottom: 2px solid black;
-}
-
-h1 {
-  margin-top: 50px;
-  font-family: "HBIOS-SYS";
-  font-size: 3rem;
-  color: black;
 }
 
 span.tip {
@@ -67,8 +41,9 @@ span.tip {
 }
 
 h1.result {
-  font-family: "OTWelcomeBA";
-
+  font-family: "GyeonggiTitleM";
+  font-weight: 700;
+  font-size: 60px;
   margin-top: 40px;
 }
 
@@ -78,8 +53,14 @@ h1.result {
   display: inline-block;
 }
 
-p {
-  font-size: 1rem;
+.dice-area p {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+p.tip {
+  margin: 60px 0px;
+  font-size: 20px;
   color: black;
   font-weight: 700;
 }
@@ -109,14 +90,15 @@ img {
 /* 버튼 */
 button {
   cursor: pointer;
-  margin: 30px 0px 30px 30px;
+  margin: 60px 0px 30px 30px;
   width: 100px;
   height: 40px;
   font-size: 1rem;
   font-weight: 700;
   border-radius: 10px;
-  border: 2px solid;
-  background-color: aquamarine;
+  border: 2px solid rgb(125, 213, 184);
+  background-color: rgb(125, 213, 184);
+  font-family: "establishRetrosansOTF";
 }
 
 button:hover {
@@ -137,19 +119,6 @@ a {
   text-decoration: none;
   color: black;
 }
-
-/* img.wow {
-  width: 80px;
-  height: 50px;
-  display: none;
-} */
-
-/* @keyframes slide-in {
-  0% {
-    transform: scale(2) rotate(60deg);
-    opacity: 0;
-  }
-} */
 
 @keyframes bump-in {
   0% {
@@ -178,7 +147,7 @@ nav.menu-list {
   justify-content: flex-end;
   /* text-align: center; */
   /* margin: 40px 60px 0 40px; */
-  margin: 0 80px 0 0px;
+  margin: 0 60px 0 0px;
   padding: 20px 0 20px 0;
   font-family: "GyeonggiTitleM";
   /* background-color: #eb6383; */
@@ -186,12 +155,12 @@ nav.menu-list {
 
 div.icon {
   display: none;
-  font-size: 20px;
+  /* font-size: 20px; */
 }
 
 img.menu-icon {
-  width: 45px;
-  height: 45px;
+  width: 60px;
+  height: 60px;
 }
 
 .p-none {
@@ -199,8 +168,9 @@ img.menu-icon {
 }
 
 a.ls:hover .p-none {
-  margin-top: 8px;
+  margin-top: 12px;
   display: block;
+  font-size: 20px;
 }
 
 a.ls:hover .menu-icon {
@@ -213,6 +183,7 @@ a.ls {
   cursor: pointer;
   font-size: 15px;
   padding: 0 20px 0 0;
+  margin-right: 20px;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -224,8 +195,9 @@ a.game {
   color: black;
   display: flex;
   flex-direction: column;
-  padding: 10px;
-  font-size: 15px;
+  margin-right: 20px;
+  padding-bottom: 15px;
+  font-size: 17px;
   text-align: center;
 }
 
@@ -351,8 +323,9 @@ img.toggle-logo {
 }
 
 p.ls-text {
+  font-family: "establishRetrosansOTF";
   margin-left: 20px;
-  font-size: 20px;
+  font-size: 40px;
 }
 
 .loading {
@@ -364,7 +337,7 @@ p.ls-text {
   top: 0;
   width: 100vw;
   height: 100vh;
-  background-color: white;
+  background-color: #eca0b1;
   animation: hideLoadingScreen 1s 1s ease forwards;
 }
 
@@ -382,8 +355,8 @@ p.ls-text {
 }
 
 .loading-diceimg {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   position: relative;
   display: flex;
   justify-content: center;
@@ -397,4 +370,55 @@ p.ls-text {
   to {
     transform: rotate(360deg);
   }
+}
+
+h1#container {
+  height: 100px;
+}
+
+h1#container span {
+  position: relative;
+  top: 20px;
+  display: inline-block;
+  animation: bounce 0.3s ease infinite alternate;
+  font-family: "establishRetrosansOTF";
+  font-size: 80px;
+  color: #fff;
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc,
+    0 5px 0 #ccc, 0 6px 0 transparent, 0 7px 0 transparent, 0 8px 0 transparent,
+    0 9px 0 transparent, 0 10px 10px rgba(0, 0, 0, 0.4);
+}
+
+h1#container span:nth-child(2) {
+  animation-delay: 0.1s;
+}
+h1#container span:nth-child(3) {
+  animation-delay: 0.2s;
+}
+h1#container span:nth-child(4) {
+  animation-delay: 0.3s;
+}
+h1#container span:nth-child(5) {
+  animation-delay: 0.4s;
+}
+h1#container span:nth-child(6) {
+  animation-delay: 0.5s;
+}
+h1#container span:nth-child(7) {
+  animation-delay: 0.6s;
+}
+
+@keyframes bounce {
+  100% {
+    top: -20px;
+    text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc,
+      0 5px 0 #ccc, 0 6px 0 #ccc, 0 7px 0 #ccc, 0 8px 0 #ccc, 0 9px 0 #ccc,
+      0 50px 25px rgba(0, 0, 0, 0.2);
+  }
+}
+
+div.swal2-header {
+  font-size: 13px;
+  font-family: "GyeonggiTitleM";
+  color: black;
 }

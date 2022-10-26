@@ -16,6 +16,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
     />
+    <link rel="stylesheet" href="sweetalert2.min.css" />
   </head>
 
   <body>
@@ -24,25 +25,17 @@
       <div href="#" class="icon"><i class="bi bi-list"></i>MENU</div>
       <div class="ul-list">
         <a class="ls" href="./index.html">
-          <img class="menu-icon" src="/static/image/logo.png" />
-          <p class="p-none">홈</p>
+          <img class="menu-icon home" src="/static/image/logo.png" />
+          <p class="p-none">HOME</p>
         </a>
         <a class="ls dropdown-btn">
           <img class="menu-icon" src="/static/image/game.png" />
-          <p class="p-none">정산게임</p>
+          <p class="p-none">복불복 게임</p>
           <div class="dropdown-container">
             <a class="game" href="./dicegame.html">주사위 게임</a>
             <a class="game" href="./scratch.html">보물 찾기</a>
             <a class="game" href="./game2.html">카드 뽑기</a>
           </div>
-        </a>
-        <a class="ls hover popup">
-          <img class="menu-icon" src="/static/image/calculator.png" />
-          <p class="p-none">계산기</p>
-        </a>
-        <a class="ls hover" href="./map.html">
-          <img class="menu-icon" src="/static/image/map.png" />
-          <p class="p-none">맛집 지도</p>
         </a>
       </div>
     </nav>
@@ -50,9 +43,9 @@
     <!-- 토글 메뉴 -->
     <nav class="toggle-menu d-none">
       <div class="toggle-menu-list">
-        <a class="toggle-ls" href="./index.html">홈</a>
+        <a class="toggle-ls" href="./index.html">HOME</a>
         <a class="toggle-ls toggle-dropdown-btn">
-          정산 게임
+          복불복 게임
           <!-- <i class="fa fa-caret-down"></i> -->
         </a>
         <div class="toggle-container">
@@ -60,22 +53,23 @@
           <a class="t-game" href="./scratch.html">보물 찾기</a>
           <a class="t-game" href="./game2.html">카드 뽑기</a>
         </div>
-        <a class="toggle-ls popup2">계산기</a>
-        <a class="toggle-ls" href="#">팀원 소개</a>
       </div>
     </nav>
 
     <div class="title title-none">
-      <hr />
-      <h1>보물 찾기<img src="/static/image/search.gif" /></h1>
-      <p>
-        <span class="tip">Tip1.</span> "섞기" 버튼을 클릭해 당첨 카드를 생성해
-        주세요
-      </p>
-      <p><span class="tip">Tip2.</span> 카드를 긁어 당첨자를 찾아주세요</p>
-      <p class="start">게임 시작하기 >></p>
+      <!-- <img class="map2" src="/static/image/map2.png" /> -->
+      <h1>보물 찾기<img src="/static/image/glass.png" /></h1>
+
+      <p class="start">Game Start >></p>
     </div>
     <div id="scratchContainer">
+      <div class="tip">
+        <p>
+          <span class="tip">Tip1.</span> "섞기" 버튼을 클릭해 당첨 카드를 생성해
+          주세요
+        </p>
+        <p><span class="tip">Tip2.</span> 카드를 긁어 당첨자를 찾아주세요!</p>
+      </div>
       <div class="canvas">
         <canvas id="scratch1" width="500" height="300"></canvas>
       </div>
@@ -95,19 +89,19 @@
         <canvas id="scratch6" width="500" height="300"></canvas>
       </div>
     </div>
-
     <div class="but">
       <button class="add" type="button" onclick="add();">유저 추가</button>
       <button class="remove" type="button" onclick="remove();">
-        유저 제거
+        유저 삭제
       </button>
       <button type="button" onclick="run();">섞기</button>
       <button class="result" type="button" onclick="result();">
         결과 한번에 보기
       </button>
-      <button type="button"><a href="scratch.html">다시 하기</a></button>
+      <button type="button"><a href="./scratch.html">다시 하기</a></button>
     </div>
 
     <script src="/static/js/scratch.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
   </body>
 </html>
