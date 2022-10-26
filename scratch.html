@@ -65,14 +65,15 @@
       </div>
     </nav>
 
-    <div class="title">
+    <div class="title title-none">
       <hr />
       <h1>보물 찾기<img src="/static/image/search.gif" /></h1>
-      <p><span class="tip">Tip1.</span> 카드를 긁어 당첨자를 찾아주세요</p>
       <p>
-        <span class="tip">Tip2.</span> "섞기 버튼"을 클릭해야 당첨 카드가
-        생성됩니다.
+        <span class="tip">Tip1.</span> "섞기" 버튼을 클릭해 당첨 카드를 생성해
+        주세요
       </p>
+      <p><span class="tip">Tip2.</span> 카드를 긁어 당첨자를 찾아주세요</p>
+      <p class="start">게임 시작하기 >></p>
     </div>
     <div id="scratchContainer">
       <div class="canvas">
@@ -101,8 +102,10 @@
         유저 제거
       </button>
       <button type="button" onclick="run();">섞기</button>
-      <button class="result" type="button" onclick="result();">결과보기</button>
-      <button type="button"><a href="scratch.html">초기화</a></button>
+      <button class="result" type="button" onclick="result();">
+        결과 한번에 보기
+      </button>
+      <button type="button"><a href="scratch.html">다시 하기</a></button>
     </div>
 
     <script src="/static/js/scratch.js"></script>

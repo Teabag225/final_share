@@ -60,8 +60,6 @@
     </nav>
     <div class="a">
       <div class="wrapper">
-        <hr />
-
         <h1 class="name">주사위 던지기</h1>
         <p>
           <span class="tip">Tip.</span> 주사위를 던져 가장 작은 수가 나온 사람이
@@ -124,13 +122,24 @@
           />
         </div>
 
+        <!-- 로딩창 -->
+        <div class="loading-container ds-none">
+          <div class="loading">
+            <img class="loading-diceimg" src="/static/image/loading-dice.png" />
+            <p class="ls-text">또르륵 주사위 굴러가는 중...</p>
+          </div>
+        </div>
+
         <div class="but">
           <button class="add" type="button" onclick="add();">유저 추가</button>
           <button class="remove" type="button" onclick="remove();">
             유저 제거
           </button>
-          <button type="button" onclick="run();">던지기</button>
-          <button type="button"><a href="dicegame.html">초기화</a></button>
+          <!-- run 버튼 한번만 실행시키기 -->
+          <button class="run" type="button" onclick="run(); this.onclick=' ';">
+            던지기
+          </button>
+          <button type="button"><a href="dicegame.html">다시 하기</a></button>
         </div>
       </div>
     </div>

@@ -66,10 +66,18 @@ function run() {
       min = numArray[i]; // 최소값 추가하기
     } else {
     }
-
-    var location = document.querySelector(".result").offsetTop;
-    window.scrollTo({ top: location, behavior: "smooth" });
   }
+
+  // 로딩창 구현
+  let loading = document.querySelector(".loading-container");
+  if (loading.classList.contains("ds-flex") == false) {
+    loading.classList.add("ds-flex");
+  }
+  // loading.classList.toggle("ds-flex");
+
+  // 스크롤 자동 이동
+  var location = document.querySelector(".result").offsetTop;
+  window.scrollTo({ top: location, behavior: "smooth" });
 
   let particles = [];
 
@@ -120,7 +128,7 @@ function run() {
     requestAnimationFrame(render);
   }
   pop();
-  window.setTimeout(render, "80");
+  window.setTimeout(render, "4000");
 
   // LOSER text 노출
 
