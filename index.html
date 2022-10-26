@@ -33,6 +33,7 @@
   <body>
     <div class="main-container">
       <!-- <header class="menu">
+
         <div class="sidenav">
           <nav class="list-menu">
             <div class="logo">
@@ -54,52 +55,51 @@
         </div>
       </header> -->
 
-      <nav class="menu-list">
-        <img class="toggle-logo" src="/static/image/toggle-logo.png" />
-        <div href="#" class="icon"><i class="bi bi-list"></i>MENU</div>
-        <div class="ul-list">
-          <a class="ls dropdown-btn">
-            <img class="menu-icon" src="/static/image/game.png" />
-            <p class="p-none">정산게임</p>
-            <div class="dropdown-container">
-              <a class="game" href="./dicegame.html">주사위 게임</a>
-              <a class="game" href="./scratch.html">보물 찾기</a>
-              <a class="game" href="#">Link 3</a>
-            </div>
-          </a>
-          <a class="ls hover popup">
-            <img class="menu-icon" src="/static/image/calculator.png" />
-            <p class="p-none">계산기</p>
-          </a>
-          <a class="ls hover" href="#">
-            <img class="menu-icon" src="/static/image/team.png" />
-            <p class="p-none">팀원 소개</p>
-          </a>
-        </div>
-      </nav>
-
-      <!-- 토글 메뉴 -->
-      <nav class="toggle-menu d-none">
-        <div class="toggle-menu-list">
-          <a class="toggle-ls toggle-dropdown-btn">
-            정산 게임
-            <!-- <i class="fa fa-caret-down"></i> -->
-          </a>
-          <div class="toggle-container">
-            <a class="t-game" href="./dicegame.html">주사위 게임</a>
-            <a class="t-game" href="./scratch.html">보물 찾기</a>
-            <a class="t-game" href="#">Link 3</a>
+    <nav class="menu-list">
+      <img class="toggle-logo" src="/static/image/toggle-logo.png" />
+      <div href="#" class="icon"><i class="bi bi-list"></i>MENU</div>
+      <div class="ul-list">
+        <a class="ls dropdown-btn">
+          <img class="menu-icon" src="/static/image/game.png" />
+          <p class="p-none">정산게임</p>
+          <div class="dropdown-container">
+            <a class="game" href="/dicegame.html">주사위 게임</a>
+            <a class="game" href="/scratch.html">Link 2</a>
+            <a class="game" href="#">Link 3</a>
           </div>
-          <a class="toggle-ls popup">계산기</a>
-          <a class="toggle-ls" href="#">팀원 소개</a>
+        </a>
+        <a class="ls hover popup">
+          <img class="menu-icon" src="/static/image/calculator.png" />
+          <p class="p-none">계산기</p>
+        </a>
+        <a class="ls hover" href="/map.html">
+          <img class="menu-icon" src="/static/image/team.png" />
+          <p class="p-none">맛집 지도</p>
+        </a>
+      </div>
+    </nav>
+    <!-- 토글 메뉴 -->
+    <nav class="toggle-menu d-none">
+      <div class="toggle-menu-list">
+        <a class="toggle-ls toggle-dropdown-btn">
+          정산 게임
+          <!-- <i class="fa fa-caret-down"></i> -->
+        </a>
+        <div class="toggle-container">
+          <a class="t-game" href="./dicegame.html">사다리게임</a>
+          <a class="t-game" href="#">Link 2</a>
+          <a class="t-game" href="#">Link 3</a>
         </div>
-      </nav>
+        <a class="toggle-ls popup2">계산기</a>
+        <a class="toggle-ls" href="/map.html">맛집 지도</a>
+      </div>
+    </nav>
 
-      <div class="main">
-        <div class="title-logo">
-          <img class="logo" src="/static/image/title-logo.png" alt="점메추" />
-        </div>
-        <!-- <form>
+    <div class="main">
+      <div class="title-logo">
+        <img class="logo" src="/static/image/title-logo.png" alt="점메추" />
+      </div>
+      <!-- <form>
           <input
             id="search"
             type="search"
@@ -112,6 +112,7 @@
             <img src="/static/image/search.png" />
           </button>
         </form> -->
+
         <form>
           <input
             id="search-item"
@@ -360,7 +361,8 @@
                 </a>
               </div>
 
-              <!-- </div> -->
+
+            <!-- </div> -->
 
               <!-- <div class="col"> -->
               <div class="card" style="width: 18remv">
@@ -426,7 +428,34 @@
                 </a>
               </div>
           
+
             <!-- </div> -->
+            <!-- <div class="col"> -->
+            <div class="card" style="width: 18remv">
+              <a href="https://google.com">
+                <img src="/static/image/뉴욕핫도그앤커피.jpg" width="30%" height="40%" class="card-img-top" alt="한강서초수" />
+                <div class="card-body">
+                  <h5 class="card-title">뉴욕핫도그앤커피</h5>
+                  <p class="card-text">
+                    핫도그와 커피, 전통음료를 판매하며, 깔끔한 1인용 포장으로
+                    간편하게 먹을 수 있는 집(뉴욕핫도그앤커피)
+                  </p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    별점
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                  </li>
+                  <li class="list-group-item">거리: 108m</li>
+                  <li class="list-group-item">평균 가격: 3,800</li>
+                </ul>
+              </a>
+            </div>
+          </div>
 
               <div class="card" style="width: 18remv">
                 <a href="https://google.com">
@@ -459,7 +488,8 @@
                 </a>
               </div>
 
-              <!-- </div> -->
+
+            <!-- </div> -->
 
               <!-- <div class="col"> -->
               <div class="card" style="width: 18remv">
@@ -863,13 +893,59 @@
         
         <!-- </div> -->
 
-        <div class="random" style="display: flex">
-          <div class="receipt">
-            <div class="title_text">
-              <h2>오늘 뭐 먹지?</h2>
+
+          <div class="row row-cols-2 row-cols-md-3 g-4">
+            <div class="card" style="width: 18remv">
+              <a href="https://google.com">
+                <img src="/static/image/수저가.jpg" width="30%" height="40%" class="card-img-top" alt="옥면가" />
+                <div class="card-body">
+                  <h5 class="card-title">수저가</h5>
+                  <p class="card-text">
+                    시원한 국물과 속을 확 풀어줄 수 있는 양이 많은
+                    짬뽕집(수저가)
+                  </p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    별점
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                  </li>
+                  <li class="list-group-item">거리: 155m</li>
+                  <li class="list-group-item">평균 가격: 8,000</li>
+                </ul>
+              </a>
             </div>
-            <div class="menu_print">
-              <h2></h2>
+
+            <!-- </div> -->
+
+            <!-- <div class="col"> -->
+            <div class="card" style="width: 18remv">
+              <a href="https://google.com">
+                <img src="/static/image/너구리초밥.jpg" width="30%" height="40%" class="card-img-top" alt="을밀대평양냉면" />
+                <div class="card-body">
+                  <h5 class="card-title">너구리초밥</h5>
+                  <p class="card-text">
+                    점심특선으로 초밥이 땡긴다면 적극 추천하는
+                    일식집(너구리초밥)
+                  </p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    별점
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                  </li>
+                  <li class="list-group-item">거리: 170m</li>
+                  <li class="list-group-item">평균 가격: 9,900</li>
+                </ul>
+              </a>
             </div>
             <div class="menu_slot">
               <div class="slot_container">
@@ -894,53 +970,87 @@
                   <li>스테이크</li>
                   <li>짬뽕</li>
                   <li>제육볶음</li>
+
                 </ul>
-              </div>
-              <p class="click">
-                click<img class="click-logo" src="/static/image/click.png" />
-              </p>
+              </a>
             </div>
           </div>
         </div>
+      </div>
+      <!-- </div> -->
 
-        <div class="modal modal-overlay" tabindex="-1">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="close-area">X</div>
-              <div class="modal-body">
-                <div class="cash-main-container">
-                  <!-- 메뉴 입력창 부분 -->
-                  <form id="menuForm">
-                    <h1 class="cash-title">우리 정산 해요</h1>
-                    <div class="wrapper">
-                      <p class="first">주문 입력</p>
-                      <label>메뉴</label>
-                      <input id="menu" type="text" />
+      <div class="random" style="display: flex">
+        <div class="receipt">
+          <div class="title_text">
+            <h2>오늘 뭐 먹지?</h2>
+          </div>
+          <div class="menu_print">
+            <h2></h2>
+          </div>
+          <div class="menu_slot">
+            <div class="slot_container">
+              <ul class="slide_box">
+                <li>냉면</li>
+                <li class="a">떡복이</li>
+                <li>김밥</li>
+                <li>국밥</li>
+                <li>잔치국수</li>
+                <li>짜장면</li>
+                <li>우동</li>
+                <li>핫도그</li>
+                <li>초밥</li>
+                <li>부대찌개</li>
+                <li>돈까스</li>
+                <li>토스트</li>
+                <li>패스트푸드</li>
+                <li>편의점</li>
+                <li>컵밥</li>
+                <li>백반</li>
+                <li>파스타</li>
+                <li>스테이크</li>
+                <li>짬뽕</li>
+                <li>제육볶음</li>
+              </ul>
+            </div>
+            <p class="click">
+              click<img class="click-logo" src="/static/image/click.png" />
+            </p>
+          </div>
+        </div>
+      </div>
 
-                      <label>가격</label>
-                      <input id="price" type="text" />
-                      <button id="submitButton" type="submit">+</button>
-                    </div>
-                  </form>
-                  <!-- 입력 결과 창 부분 -->
-                  <div class="order-list">
-                    <p class="second">주문 리스트</p>
-                    <ol class="lists"></ol>
+      <div class="modal modal-overlay" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="close-area">X</div>
+            <div class="modal-body">
+              <div class="cash-main-container">
+                <!-- 메뉴 입력창 부분 -->
+                <form id="menuForm">
+                  <h1 class="cash-title">우리 정산 해요</h1>
+                  <div class="wrapper">
+                    <p class="first">주문 입력</p>
+                    <label>메뉴</label>
+                    <input id="menu" type="text" />
+
+                    <label>가격</label>
+                    <input id="price" type="text" />
+                    <button id="submitButton" type="submit">+</button>
                   </div>
-                  <!-- 총합 부분 -->
-                  <div class="cal">
-                    <p id="total"></p>
-                    <label class="peo" for="peo"> / 총 인원수 : </label>
-                    <input
-                      id="people"
-                      type="number"
-                      value="1"
-                      onchange="autopay()"
-                    />
-                  </div>
-                  <div class="result">
-                    <p class="payment">= 인당 <span id="payment"></span></p>
-                  </div>
+                </form>
+                <!-- 입력 결과 창 부분 -->
+                <div class="order-list">
+                  <p class="second">주문 리스트</p>
+                  <ol class="lists"></ol>
+                </div>
+                <!-- 총합 부분 -->
+                <div class="cal">
+                  <p id="total"></p>
+                  <label class="peo" for="peo"> / 총 인원수 : </label>
+                  <input id="people" type="number" value="1" onchange="autopay()" />
+                </div>
+                <div class="result">
+                  <p class="payment">= 인당 <span id="payment"></span></p>
                 </div>
               </div>
             </div>

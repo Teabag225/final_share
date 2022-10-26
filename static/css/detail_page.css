@@ -12,16 +12,14 @@
 
 @font-face {
   font-family: "KyoboHandwriting2020A";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112@1.0/KyoboHandwriting2020A.woff")
-    format("woff");
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112@1.0/KyoboHandwriting2020A.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "GyeonggiTitleM";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/GyeonggiTitleM.woff")
-    format("woff");
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/GyeonggiTitleM.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -225,6 +223,7 @@ div.map {
 }
 
 @media (max-width: 890px) {
+
   div.menu1,
   div.menu2 {
     display: flex;
@@ -238,4 +237,34 @@ div.map {
     font-size: 20px;
     margin-top: 20px;
   }
+}
+
+
+/* 지도 안 카드 css */
+.card>a {
+  text-decoration: none;
+  color: black;
+}
+
+#cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+div.card {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 0.25rem;
+  margin-top: 50px;
+  margin-left: 20px;
+  width: 30%;
+}
+
+.hide {
+  display: none;
+}
+
+.checked {
+  color: orange;
 }
