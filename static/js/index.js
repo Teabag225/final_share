@@ -126,3 +126,37 @@ function search() {
 //     document.getElementById("submit").click();
 //   }
 // });
+
+
+//bgm기능
+const muteImg = document.querySelector('#muteImg');
+const bgm = new Audio('./static/image/bgm.mp3');
+const soundImg = document.querySelector('#soundImg');
+
+//노래재생
+soundImg.addEventListener('click', function(){
+
+  
+  // bgm.play();
+    if(bgm.paused) {
+      bgm.play();
+      muteImg.setAttribute('src', './static/image/sound.png');
+      soundImg.setAttribute('src', './static/image/mute.png');
+    }
+    else{
+      bgm.pause();
+      soundImg.setAttribute('src', './static/image/sound.png');
+      muteImg.setAttribute('src', './static/image/mute.png');
+    }
+  
+  
+});
+
+//노래일시정지
+
+
+//무한재생
+bgm.addEventListener('ended', function(){
+  this.currentTime = 0;
+  this.play();
+}, false);
