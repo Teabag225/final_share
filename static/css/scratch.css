@@ -243,6 +243,7 @@ div.ul-list {
   flex-direction: row;
   margin-left: 40px;
   /* text-align: center; */
+  font-family: "GyeonggiTitleM";
 }
 
 a.toggle-ls {
@@ -262,7 +263,7 @@ a.toggle-ls:hover {
 
 a.t-game {
   text-decoration: none;
-  color: rgb(154, 151, 151);
+  color: white;
   display: flex;
   flex-direction: column;
   padding-top: 10px;
@@ -376,6 +377,28 @@ p.start {
 img.glass {
   width: 32px;
   height: 32px;
+}
+
+@media (max-width: 1130px) {
+  .title {
+    font-size: 25px;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+
+    background-color: white;
+    background-image: url(/static/image/map2.png);
+    background-repeat: no-repeat;
+    background-size: 800px;
+    background-position: 50% 50%;
+    /* animation: hideLoadingScreen 2s 2s ease forwards;*/
+  }
 }
 
 @media (max-width: 940px) {
