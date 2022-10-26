@@ -48,6 +48,8 @@ function remove() {
   }
 }
 
+let loading = document.querySelector(".loading-container");
+
 // 던지기
 function run() {
   const numArray = [1, 2, 3, 4, 5, 6]; // 주사위 숫자
@@ -68,11 +70,6 @@ function run() {
     }
   }
 
-  // 로딩창 구현
-  let loading = document.querySelector(".loading-container");
-  if (loading.classList.contains("ds-flex") == false) {
-    loading.classList.add("ds-flex");
-  }
   // loading.classList.toggle("ds-flex");
 
   // 스크롤 자동 이동
@@ -91,6 +88,7 @@ function run() {
     "coral",
     "lightgreen",
   ];
+
   function pop() {
     for (let i = 0; i < 150; i++) {
       const p = document.createElement("particule");
@@ -120,15 +118,35 @@ function run() {
       p.y += p.vel.y;
 
       p.vel.y += 0.5 * p.mass;
+      console.log(p.length);
+      if (particles.length > 0) {
+        loading.classList.remove("ds-flex");
+        console.log(p);
+      }
+
       if (p.y > window.innerHeight * 2) {
         p.remove();
+        loading.classList.remove("ds-flex");
+        loading.classList.add("ds-none");
         particles.splice(i, 1);
       }
     }
     requestAnimationFrame(render);
   }
-  pop();
-  window.setTimeout(render, "4000");
+
+  // 로딩창 구현
+  if (loading.classList.contains("ds-flex") == false) {
+    // const target = document.getElementById("target_btn");
+    loading.classList.add("ds-flex");
+    // target.disabled = true;
+    loading.classList.remove("ds-none");
+    pop();
+    window.setTimeout(render, "2000");
+    // target.disabled = false;
+  }
+  // pop();
+  // render();
+  // window.setTimeout(render, "2000");
 
   // LOSER text 노출
 
