@@ -6,6 +6,9 @@ let card5 = document.querySelectorAll(".noshow")[2];
 let card6 = document.querySelectorAll(".noshow")[3];
 let insInput = document.querySelector(".input");
 
+//모달창(팝업창 디자인)
+const popUp = document.querySelector('.modal');
+const pTxt = popUp.querySelector('p');
 
 
 let cnt = 2;
@@ -56,12 +59,17 @@ function add(){
     const user6 = document.createTextNode(" User6 ");
     userLabel4.appendChild(user6);
     insInput.append(userLabel4, userInput4);
-
-  
     cnt++;
+
   } else {
-    alert("최대 6인입니다.");
-  }
+    popUp.style.display="inline-flex";
+    pTxt.innerText = "User는 최대 6명까지 가능합니다.";
+    pTxt.style.textAlign="center";
+    pTxt.style.whiteSpace = "nowrap";
+    document.querySelector('#popBtnY').addEventListener('click',function(){
+    popUp.style.display="none";
+    });
+    }
 }
 
 //유저 제거하기
@@ -102,21 +110,36 @@ function remove() {
     cnt--;
 
   } else {
-    alert("최소 2인입니다.");
+    popUp.style.display="inline-flex";
+    pTxt.innerText = "User는 최소 2명이 필요합니다.";
+    pTxt.style.textAlign="center";
+    pTxt.style.whiteSpace = "nowrap";
+    document.querySelector('#popBtnY').addEventListener('click',function(){
+    popUp.style.display="none";
+    });
   }
 }
 
 
 //게임시작 (Start button_#submitBtn)
 function run(){
-  
+
   const imgCard = document.querySelectorAll('.card');
   const inputBorder = document.querySelectorAll('input');
+  const chgImg = document.getElementById('submitBtn');
   const arr = [];
   const txt1 = document.querySelector('.txt1');
   txt1.style.display = "inline-block";
   
+  document.querySelector('.add').style.display = "none";
+  document.querySelector('.remove').style.display = "none";
+  chgImg.setAttribute('src', './static/image/poker-cards.png');
+  
+  // document.querySelector('.shuffle').style.transform = "translateX(-50px);"
+
+  //유저수만큼 카드 보이기 
   for ( var i = 0; i < inputBorder.length; i++ ) {
+    if(inputBorder[i].value != ""){
     inputBorder[i].style.border = '0px solid';  
     inputBorder[i].style.background = 'none';  
     inputBorder[i].style.fontFamily = 'HBIOS-SYS';  
@@ -127,9 +150,16 @@ function run(){
     arr[i] = inputBorder[i].value; //빈 배열에 값 삽입
     imgCard[i].style.position = "absolute";
     // imgCard[i].style.left = "100px";
-
-  };
-  
+  } 
+  else{popUp.style.display="inline-flex";} //User에 값을 입력하지 않을 경우
+        pTxt.innerText = "User 이름을 모두 입력해주세요."
+        pTxt.style.textAlign="center";
+        pTxt.style.whiteSpace = "nowrap";
+        document.querySelector('#popBtnY').addEventListener('click',function(){
+          popUp.style.display="none";
+        })
+};
+  //유저값 랜덤 추출
   const min = Math.ceil(0);
   const max = Math.floor(i);
   const r = Math.floor(Math.random()*(max-min))+min;
@@ -144,8 +174,6 @@ function run(){
     
     imgCard[r].classList.add('slideUp');
     
-    
-    
     txt1.style.display = "none";
     
   
@@ -154,8 +182,6 @@ function run(){
   // cardone.classList.add("slideUp");
   btnY.style.display = "flex";
   btnN.style.display = "flex";
-
-
   });
   
   //카드 확정 -> 빙글빙글돌면서 확대
@@ -168,7 +194,7 @@ btnY.addEventListener('click', function() {
   // btnN.style.display = "none";
   // imgCard[r].style.transform = "translateX(100%) rotateY(-180deg) scale(3)";
   imgCard[r].classList.add("rotateCard");
-  txt2.innerHTML = `${rTxt}`;
+  txt2.innerHTML = `${rTxt}님의 카드`;
 });
   
 // 카드 취소 -> 다시 원래 자리로 돌려보내기
@@ -213,7 +239,7 @@ function shuffle(){
 
 // 초기화버튼 (새로고침)
 function reset() {
-  location.reload();
+  location.replace(location.href);
 }
 
 
@@ -253,7 +279,7 @@ if (! mediaQuery || ! mediaQuery.matches) {
 //불꽃놀이 애니메이션
 var c = document.getElementById('canvas');
 var ctx = c.getContext("2d");
-
+console.log(c);
 var cwidth, cheight;
 var shells = [];
 var pass = [];

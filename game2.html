@@ -12,7 +12,7 @@
 
   </head>
   <body>
-    <canvas id="canvas"></canvas>
+    <!-- <canvas id="canvas"></canvas> -->
     <h1>CARD GAME</h1>
     
     <div class="input">
@@ -27,7 +27,7 @@
       <button class="remove" type="button" onclick="remove()"><img src="./static/image/remove.png" alt=""></button>
       <button class="upDown" id="submitBtn" type="submit" onclick="run()"><img src="./static/image/start-button.png" alt=""></button>
       <button id="shuffle"><img src="/static/image/shuffle.png" onclick="shuffle()" alt="셔플버튼"></button>
-      <button id="reset" type="button" onclick="reset()"><img src="./static/image/reset.png" alt=""></a></button>
+      <button id="reset" type="button" onclick="reset()"><img src="./static/image/reset.png" alt=""></button>
     </div>
     
     <div class="div1">
@@ -93,9 +93,15 @@
     
     </div>
 
-    
+    <div class="modal">
+      <p class="message"></p>
+      <div class="options">
+        <button class="popBtn" id="popBtnY">Okay</button>
+        <!-- <button class="popBtn">No</button> -->
+      </div>
     </div>
 
+</body>
     <!-- gsap Library CDN -->
     <script 
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" 
