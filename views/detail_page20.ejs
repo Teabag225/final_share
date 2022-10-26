@@ -1,111 +1,324 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>상세페이지</title>
     <!-- bootstrap -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" />
+    <!-- Bootstrap Icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
     <!-- Normalize.css -->
     <link rel="stylesheet" href="/static/css/normalize.css" />
-
     <link rel="stylesheet" href="/static/css/detail_page.css" />
+    <link rel="stylesheet" href="/static/css/cash.css" />
+
     <!-- AOS CDN -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
     <!-- jquery CDN -->
-    <script
-      src="https://code.jquery.com/jquery-3.6.1.min.js"
-      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
-      crossorigin="anonymous"
-    ></script>
-  </head>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+</head>
+<script type="text/javascript"
+    src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ddd66e60450ab8ee13bc6a9e68d9140b&libraries=services"></script>
 
-  <body>
-    <div class="title">
-      <h3>Your Pick</h3>
-      <h1>&lt;미가&gt;</h1>
-      <div class="info">
+<body>
+    <!-- 메뉴 -->
+    <nav class="menu-list">
+        <div href="#" class="icon"><i class="bi bi-list"></i>MENU</div>
+        <div class="ul-list">
+            <a class="ls" href="index">
+                <img class="menu-icon home" src="/static/image/logo.png" />
+                <p class="p-none">HOME</p>
+            </a>
+            <a class="ls dropdown-btn">
+                <img class="menu-icon" src="/static/image/game.png" />
+                <p class="p-none">복불복 게임</p>
+                <div class="dropdown-container">
+                    <a class="game" href="dicegame">주사위 게임</a>
+                    <a class="game" href="scratch">보물 찾기</a>
+                    <a class="game" href="game2">카드 뽑기</a>
+                </div>
+            </a>
+            <a class="ls hover popup">
+                <img class="menu-icon" src="/static/image/calculator.png" />
+                <p class="p-none">계산기</p>
+            </a>
+        </div>
+    </nav>
+
+    <!-- 토글 메뉴 -->
+    <nav class="toggle-menu d-none">
+        <div class="toggle-menu-list">
+            <a class="toggle-ls" href="index">HOME</a>
+            <a class="toggle-ls toggle-dropdown-btn">
+                복불복 게임
+                <!-- <i class="fa fa-caret-down"></i> -->
+            </a>
+            <div class="toggle-container">
+                <a class="t-game" href="dicegame">주사위 게임</a>
+                <a class="t-game" href="scratch">보물 찾기</a>
+                <a class="t-game" href="game2">카드 뽑기</a>
+            </div>
+            <a class="toggle-ls popup">계산기</a>
+        </div>
+    </nav>
+
+<div class="title">
+    <h3>Your Pick</h3>
+    <h1>&lt;미가&gt;</h1>
+    <div class="info">
         <div class="info-info">
-          <img class="info-logo" src="/static/image/information.png" />
-          주차, 포장, 배달, 무선 인터넷, 남/녀 화장실 구분
+            <img class="info-logo" src="/static/image/information.png" />
+            주차, 포장, 배달, 무선 인터넷, 남/녀 화장실 구분
         </div>
         <div class="open-info">
-          <img class="info-logo" src="/static/image/open-sign.png" />월 ~ 금 AM	11:00 ~ PM 09:00
+            <img class="info-logo" src="/static/image/open-sign.png" />월 ~ 금 AM 11:00 ~ PM 09:00
         </div>
         <div class="tel-info">
-          <img class="info-logo" src="/static/image/phone.png" />02-703-5279
+            <img class="info-logo" src="/static/image/phone.png" />02-703-5279
         </div>
-      </div>
-      <div class="line"></div>
     </div>
-    <div class="scroll">
-      <img src="/static/image/scroll-bar.png" />
-    </div>
-    <div
-      data-aos="fade-in"
-      data-aos-offset="380"
-      data-aos-duration="1000"
-      data-aos-once="true"
-    >
-      <p class="menuls-title">대표 메뉴</p>
-    </div>
-    <div class="menu">
-      <div
-        data-aos="fade-right"
-        data-aos-offset="400"
-        data-aos-duration="1500"
-        data-aos-once="true"
-      >
+    <div class="line"></div>
+</div>
+<div class="scroll">
+    <img src="/static/image/scroll-bar.png" />
+</div>
+<div data-aos="fade-in" data-aos-offset="380" data-aos-duration="1000" data-aos-once="true">
+    <p class="menuls-title">대표 메뉴</p>
+</div>
+<div class="menu">
+    <div data-aos="fade-right" data-aos-offset="400" data-aos-duration="1500" data-aos-once="true">
         <div class="menu1">
-          <img src="/static/image/jessam.jpg" />
-          <div class="text">
-            <p class="name1">제육쌈밥</p>
-            <p class="cost">9,000</p>
-            <div class="review">
-              <p>" 이리 저리 맛봐도 환상!! "</p>
+            <img src="/static/image/jessam.jpg" />
+            <div class="text">
+                <p class="name1">제육쌈밥</p>
+                <p class="cost">9,000</p>
+                <div class="review">
+                    <p>" 이리 저리 맛봐도 환상!! "</p>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-      <div
-        data-aos="fade-left"
-        data-aos-offset="430"
-        data-aos-duration="1500"
-        data-aos-once="true"
-      >
-        <div class="menu2">
-          <img src="/static/image/chad.jpg" />
-          <div class="text">
-            <p class="name1">차돌된장</p>
-            <p class="cost">9,000원</p>
-            <div class="review">
-              <p>" 고소하고 맛있습니다"</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <a
-        href="https://naver.me/xUSt3by8"
-        target="_blank"
-        class="card-link"
-        >리뷰 & 메뉴 더 보러가기</a
-      >
     </div>
+    <div data-aos="fade-left" data-aos-offset="430" data-aos-duration="1500" data-aos-once="true">
+        <div class="menu2">
+            <img src="/static/image/chad.jpg" />
+            <div class="text">
+                <p class="name1">차돌된장</p>
+                <p class="cost">9,000원</p>
+                <div class="review">
+                    <p>" 고소하고 맛있습니다"</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="https://naver.me/xw6jSbhS" target="_blank" class="card-link">리뷰 & 메뉴 더 보러가기</a>
+</div>
 
     <p class="map-title">음식점 위치</p>
     <div class="map">
-      <div>지도 들어갈 고오오오오오옷</div>
+        <div id="map" style="width: 100%; height: 100%"></div>
     </div>
-    <script src="/static/js/detail_page.js"></script>
-    <!-- AOS JS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- 계산기 모달 -->
+    <div class="modal modal-overlay" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-area">X</div>
+                <div class="modal-body">
+                    <div class="cash-main-container">
+                        <!-- 메뉴 입력창 부분 -->
+                        <form id="menuForm">
+                            <h1 class="cash-title">우리 정산 해요</h1>
+                            <div class="wrapper">
+                                <p class="first">주문 입력</p>
+                                <label>메뉴</label>
+                                <input id="menu" type="text" />
+
+                                <label>가격</label>
+                                <input id="price" type="text" />
+                                <button id="submitButton" type="submit">+</button>
+                            </div>
+                        </form>
+                        <!-- 입력 결과 창 부분 -->
+                        <div class="order-list">
+                            <p class="second">주문 리스트</p>
+                            <ol class="lists"></ol>
+                        </div>
+                        <!-- 총합 부분 -->
+                        <div class="cal">
+                            <p id="total"></p>
+                            <label class="peo" for="peo"> / 총 인원수 : </label>
+                            <input id="people" type="number" value="1" onchange="autopay()" />
+                        </div>
+                        <div class="result">
+                            <p class="payment">= 인당 <span id="payment"></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
-      AOS.init();
+        var posx = 37.5485262
+
+        var posy = 126.9453058
+        var mapContainer = document.getElementById("map"), // 지도를 표시할 div
+            mapOption = {
+                center: new kakao.maps.LatLng(posx, posy), // 지도의 중심좌표
+                level: 4, // 지도의 확대 레벨
+            };
+
+        var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+        var markerPosition = new kakao.maps.LatLng(posx, posy);
+
+        // 마커를 생성합니다
+        var marker = new kakao.maps.Marker({
+            position: markerPosition,
+        });
+
+        // 마커가 지도 위에 표시되도록 설정합니다
+        marker.setMap(map);
+
+        var iwContent = '<div style="padding:3px;">미가</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+            iwPosition = new kakao.maps.LatLng(posx, posy); //인포윈도우 표시 위치입니다
+
+        // 인포윈도우를 생성합니다
+        var infowindow = new kakao.maps.InfoWindow({
+            position: iwPosition,
+            content: iwContent,
+        });
+
+        // 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
+        infowindow.open(map, marker);
+
+        // 커스텀 오버레이에 표시할 내용입니다
+        // HTML 문자열 또는 Dom Element 입니다
+        var content =
+            '<div id="myDiv">' +
+            ' <div class="product-list" id="product-list">' +
+            ' <div class="card">' +
+            '<img src="./static/image/미가.jpg" class="card-img-top" alt="미가" />' +
+            '<div class="card-body">' +
+            '<h5 class="card-title">미가</h5>' +
+            ' <p class="card-text">' +
+            " 제육볶음이 맛있기로 소문난 한식점 이리 저리 맛봐도 환상!! " +
+            "</p>" +
+            "</div>" +
+            '<ul class="list-group list-group-flush">' +
+            '<li class="list-group-item">' +
+            "별점" +
+            '<span class="fa fa-star checked"></span>' +
+            ' <span class="fa fa-star checked"></span>' +
+            ' <span class="fa fa-star checked"></span>' +
+            ' <span class="fa fa-star checked"></span>' +
+            '<span class="fa fa-star checked"></span>' +
+            "</li>" +
+            '<li class="list-group-item">거리: 130m</li>' +
+            ' <li class="list-group-item">평균 가격: 9,000</li>' +
+            " </ul> " +
+            "</a> " +
+            "</div> ";
+
+        // 커스텀 오버레이가 표시될 위치입니다
+        var position = new kakao.maps.LatLng(posx, posy);
+
+        // 커스텀 오버레이를 생성합니다
+        var customOverlay = new kakao.maps.CustomOverlay({
+            map: map,
+            position: position,
+            content: content,
+            xAnchor: -0.3,
+            yAnchor: 0.67,
+        });
+        var circle = new kakao.maps.Circle({
+            map: map, // 원을 표시할 지도 객체
+            center: new kakao.maps.LatLng(37.5475627, 126.945677), // 지도의 중심 좌표
+            radius: 15, // 원의 반지름 (단위 : m)
+            fillColor: '#FF0000', // 채움 색
+            fillOpacity: 0.5, // 채움 불투명도
+            strokeWeight: 1, // 선의 두께
+            strokeColor: '#FF0000', // 선 색
+            strokeOpacity: 0.9, // 선 투명도
+            strokeStyle: 'solid' // 선 스타일
+        });
+
+
+        //dropdown
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
+
+        for (i = 0; i < dropdown.length; i++) {
+            dropdown[i].addEventListener("click", function () {
+                this.classList.toggle("active"); var dropdownContent = this.nextElementSibling; if
+                    (dropdownContent.style.display === "block") { dropdownContent.style.display = "none"; } else {
+                    dropdownContent.style.display = "block";
+                }
+            });
+        } var
+            t_dropdown = document.getElementsByClassName("toggle-dropdown-btn"); var i; for (i = 0; i < t_dropdown.length;
+            i++) {
+            t_dropdown[i].addEventListener("click", function () {
+                this.classList.toggle("t_active"); var
+                    t_dropdownContent = this.nextElementSibling; if (t_dropdownContent.style.display === "block") {
+                        t_dropdownContent.style.display = "none";
+                    } else { t_dropdownContent.style.display = "block"; }
+            });
+        } //토클 메뉴
+        const iconMenu = document.querySelector(".icon"); const toggleMenu = document.querySelector(".toggle-menu");
+        iconMenu.addEventListener("click", function () { toggleMenu.classList.toggle("d-none"); }); // Modal 창 구현
+        const modal = document.querySelector(".modal"); const btnModal = document.querySelectorAll(".popup"); for (let
+            i = 0; i < btnModal.length; i++) {
+            btnModal[i].addEventListener("click", (e) => {
+                modal.style.display = "flex";
+                document.body.classList.add("stop-scroll");
+            });
+        }
+
+        // X 부분 클릭하면 창 닫기
+        const closeBtn = modal.querySelector(".close-area");
+        closeBtn.addEventListener("click", (e) => {
+            modal.style.display = "none";
+            // document.querySelector("#total").innerText = " ";
+            // document.querySelector("#payment").innerText = " ";
+            // document.querySelector("ul").remove();
+            // document.querySelector(".lists").innerHTML = " ";
+            tot = 0;
+            pay = 0;
+
+            $("#total").empty();
+            $("#payment").empty();
+            $(".lists").empty();
+            document.body.classList.remove("stop-scroll");
+        });
+
+        // Modal 창 외의 부분 클릭 했을 떄 창 닫기
+        modal.addEventListener("click", (e) => {
+            const evTarget = e.target;
+            if (evTarget.classList.contains("modal-overlay")) {
+                modal.style.display = "none";
+                tot = 0;
+                pay = 0;
+                $("#total").empty();
+                $("#payment").empty();
+                $(".lists").empty();
+                document.body.classList.remove("stop-scroll");
+            }
+        });
     </script>
-  </body>
+    <script src="/static/js/cash.js"></script>
+
+    <!— <!— AOS JS —> —>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+</body>
+
 </html>
