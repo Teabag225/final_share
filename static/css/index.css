@@ -502,19 +502,28 @@ a.nav-link {
   color: black;
 }
 
-#cards {
+div.product-list {
+  margin-top: 50px;
+  /* margin-left: 60px; */
   display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 div.card {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 0.25rem;
-  margin-top: 50px;
-  margin-left: 20px;
-  width: 30%;
+  /* display: grid; */
+  /* grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); */
+  /* gap: 0.25rem; */
+  /* margin-top: 50px; */
+  /* margin-left: 20px; */
+  /* width: 30%; */
+  /* margin: 20px; */
+  width: 400px;
+  height: 600px;
+  margin-bottom: 30px;
+  margin: 20px;
 }
 
 .hide {
@@ -534,3 +543,7 @@ div.card {
 }  */
 /* card 위치 auto-fill로 자동 위치 설정 */
 /* grid-template-columns: repeat(auto-fill); */
+
+img.card-img-top {
+  position: relative;
+}
