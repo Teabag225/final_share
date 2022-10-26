@@ -278,3 +278,11 @@ const toggleMenu = document.querySelector(".toggle-menu");
 iconMenu.addEventListener("click", function () {
   toggleMenu.classList.toggle("d-none");
 });
+
+let start = document.querySelector(".start");
+let cover = document.querySelector(".title");
+start.addEventListener("click", function () {
+  if (cover.classList.contains("title") === true) {
+    cover.classList.remove("title");
+  }
+});

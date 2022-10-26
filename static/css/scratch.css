@@ -73,14 +73,23 @@ button {
   width: 80px;
   height: 30px;
   font-size: 1rem;
+  font-weight: 700;
 }
 
-/* 주사위 안보이기 */
+button.result {
+  width: 150px;
+}
+
+button.start {
+  width: 150px;
+}
+
+/* 카드 안보이기 */
 .noshow {
   display: none;
 }
 
-/* 주사위 보이기 */
+/* 카드 보이기 */
 .show {
   display: inline-flex;
 }
@@ -131,10 +140,6 @@ button:hover {
 }
 
 /* 메뉴 바 */
-
-hr {
-  border: 1px dashed;
-}
 
 .active {
   color: black;
@@ -306,5 +311,51 @@ img.toggle-logo {
 @media (min-width: 1020px) {
   .toggle-menu-list {
     display: none;
+  }
+}
+
+/* .cover-none {
+  display: flex;
+} */
+
+.title-none {
+  display: none;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 32;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  /* animation: hideLoadingScreen 2s 2s ease forwards; */
+}
+
+/* @keyframes hideLoadingScreen {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+} */
+
+p.start {
+  font-size: 20px;
+  animation: blink 0.7s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
   }
 }
