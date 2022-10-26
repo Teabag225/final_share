@@ -1,10 +1,53 @@
+
+// 메뉴바
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+    dropdown[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var dropdownContent = this.nextElementSibling;
+        if (dropdownContent.style.display === "block") {
+            dropdownContent.style.display = "none";
+        } else {
+            dropdownContent.style.display = "block";
+        }
+    });
+}
+
+var t_dropdown = document.getElementsByClassName("toggle-dropdown-btn");
+var i;
+
+for (i = 0; i < t_dropdown.length; i++) {
+    t_dropdown[i].addEventListener("click", function () {
+        this.classList.toggle("t_active");
+        var t_dropdownContent = this.nextElementSibling;
+        if (t_dropdownContent.style.display === "block") {
+            t_dropdownContent.style.display = "none";
+        } else {
+            t_dropdownContent.style.display = "block";
+        }
+    });
+}
+
+//토클 메뉴
+
+const iconMenu = document.querySelector(".icon");
+const toggleMenu = document.querySelector(".toggle-menu");
+
+iconMenu.addEventListener("click", function () {
+    toggleMenu.classList.toggle("d-none");
+});
+
+
+
 // 마커를 담을 배열입니다
 var markers = [];
 
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
     mapOption = {
         center: new kakao.maps.LatLng(37.5475627, 126.945677), // 지도의 중심좌표
-        level: 6 // 지도의 확대 레벨
+        level: 4 // 지도의 확대 레벨
     };
 
 // 지도를 생성합니다    
@@ -43,6 +86,7 @@ function placesSearchCB(data, status, pagination) {
 
         // 페이지 번호를 표출합니다
         displayPagination(pagination);
+        console.log(data)
 
     } else if (status === kakao.maps.services.Status.ZERO_RESULT) {
 
@@ -480,3 +524,15 @@ function getTimeHTML(distance) {
 
     return content;
 }
+
+var circle = new kakao.maps.Circle({
+    map: map, // 원을 표시할 지도 객체
+    center: new kakao.maps.LatLng(37.5475627, 126.945677), // 지도의 중심 좌표
+    radius: 25, // 원의 반지름 (단위 : m)
+    fillColor: '#FF0000', // 채움 색
+    fillOpacity: 0.5, // 채움 불투명도
+    strokeWeight: 1, // 선의 두께
+    strokeColor: '#FF0000', // 선 색
+    strokeOpacity: 0.9, // 선 투명도 
+    strokeStyle: 'solid' // 선 스타일
+});	
