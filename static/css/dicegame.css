@@ -236,6 +236,7 @@ i.bi {
   flex-direction: row;
   /* text-align: center; */
   margin-left: 40px;
+  font-family: "GyeonggiTitleM";
 }
 
 a.toggle-ls {
@@ -255,7 +256,7 @@ a.toggle-ls:hover {
 
 a.t-game {
   text-decoration: none;
-  color: rgb(154, 151, 151);
+  color: white;
   display: flex;
   flex-direction: column;
   padding-top: 10px;
@@ -382,7 +383,7 @@ h1#container span {
   display: inline-block;
   animation: bounce 0.3s ease infinite alternate;
   font-family: "establishRetrosansOTF";
-  font-size: 80px;
+  font-size: 70px;
   color: #fff;
   text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc,
     0 5px 0 #ccc, 0 6px 0 transparent, 0 7px 0 transparent, 0 8px 0 transparent,

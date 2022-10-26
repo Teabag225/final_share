@@ -1,37 +1,87 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title>키워드로 장소검색하고 목록으로 표출하기</title>
-    <link rel="stylesheet" href="./static/css/map.css">
-</head>
+    <link rel="stylesheet" href="./static/css/map.css" />
 
-<body>
-    <div class="map_wrap">
-        <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
+    <!-- Bootstrap Icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+  </head>
 
-        <div id="menu_wrap" class="bg_white">
-            <div class="option">
-                <div>
-                    <form onsubmit="searchPlaces(); return false;">
-                        키워드 : <input type="text" value="대흥역 맛집" id="keyword" size="15">
-                        <button type="submit">검색하기</button>
-                    </form>
-                </div>
-            </div>
-            <hr>
-            <ul id="placesList"></ul>
-            <div id="pagination"></div>
+  <body>
+    <nav class="menu-list">
+      <img class="toggle-logo" src="/static/image/toggle-logo.png" />
+      <div href="#" class="icon"><i class="bi bi-list"></i>MENU</div>
+      <div class="ul-list">
+        <a class="ls hover" href="/index.html">
+          <img class="menu-icon" src="/static/image/logo.png" />
+          <p class="p-none">HOME</p>
+        </a>
+        <a class="ls dropdown-btn">
+          <img class="menu-icon" src="/static/image/game.png" />
+          <p class="p-none">복불복 게임</p>
+          <div class="dropdown-container">
+            <a class="game" href="./dicegame.html">주사위 게임</a>
+            <a class="game" href="./scratch.html">보물 찾기</a>
+            <a class="game" href="./game2.html">카드 뽑기</a>
+          </div>
+        </a>
+        <a class="ls hover" href="/map.html">
+          <img class="menu-icon" src="/static/image/map.png" />
+          <p class="p-none">맛집 지도</p>
+        </a>
+      </div>
+    </nav>
+
+    <!-- 토글 메뉴 -->
+    <nav class="toggle-menu d-none">
+      <div class="toggle-menu-list">
+        <a class="toggle-ls" href="./index.html">HOME</a>
+        <a class="toggle-ls toggle-dropdown-btn"> 복불복 게임 </a>
+        <div class="toggle-container">
+          <a class="t-game" href="./dicegame.html">주사위 게임</a>
+          <a class="t-game" href="./scratch.html">보물 찾기</a>
+          <a class="t-game" href="./game2.html">카드 뽑기</a>
         </div>
+        <a class="toggle-ls" href="./map.html">맛집 지도</a>
+      </div>
+    </nav>
+    <div class="map_wrap">
+      <div
+        id="map"
+        style="width: 100%; height: 100%; position: relative; overflow: hidden"
+      ></div>
+
+      <div id="menu_wrap" class="bg_white">
+        <div class="option">
+          <div>
+            <form onsubmit="searchPlaces(); return false;">
+              키워드 :
+              <input type="text" value="대흥역 맛집" id="keyword" size="15" />
+              <button type="submit">검색하기</button>
+            </form>
+          </div>
+        </div>
+        <hr />
+        <ul id="placesList"></ul>
+        <div id="pagination"></div>
+      </div>
     </div>
     <p>
-        <em>지도를 마우스로 클릭하면 선 그리기가 시작되고<br>오른쪽 마우스를 클릭하면 선 그리기가 종료됩니다</em>
+      <em
+        >지도를 마우스로 클릭하면 선 그리기가 시작되고<br />오른쪽 마우스를
+        클릭하면 선 그리기가 종료됩니다</em
+      >
     </p>
 
-    <script type="text/javascript"
-        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ddd66e60450ab8ee13bc6a9e68d9140b&libraries=services"></script>
+    <script
+      type="text/javascript"
+      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ddd66e60450ab8ee13bc6a9e68d9140b&libraries=services"
+    ></script>
     <script src="./static/js/map.js"></script>
-</body>
-
+  </body>
 </html>

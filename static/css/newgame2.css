@@ -640,6 +640,7 @@ i.bi {
   flex-direction: row;
   /* text-align: center; */
   margin-left: 40px;
+  font-family: "GyeonggiTitleM";
 }
 
 a.toggle-ls {
