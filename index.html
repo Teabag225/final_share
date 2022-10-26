@@ -120,6 +120,8 @@
             placeholder="찾고 싶은 메뉴를 입력해 주세요"
             aria-label="찾고 싶은 메뉴를 입력해 주세요"
             aria-describedby="button-addon2"
+            onkeypress="if(event.keyCode =='13'){event.preventDefault(); search(); changeStyle();}"
+
           />
           <button id="submit" type="button" onclick="search(), changeStyle()">
             <img src="/static/image/search.png" />
@@ -601,6 +603,7 @@
     </div>
     <!-- <script src="./index.js"></script> -->
     <!-- <script src="/static/js/random.js"></script> -->
+    
     <script src="/static/js/random.js"></script>
     <script src="/static/js/index.js"></script>
     <script src="/static/js/cash.js"></script>
