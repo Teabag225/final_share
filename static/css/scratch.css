@@ -50,7 +50,6 @@ body {
   height: auto;
   cursor: crosshair;
   cursor: url(../image/win.png) 53 53, crosshair;
-
 }
 
 #scratchContainer {
@@ -116,7 +115,7 @@ div.title {
 
 h1 {
   font-family: "HBIOS-SYS";
-  font-size: 3rem;
+  font-size: 4rem;
   color: black;
 }
 
@@ -324,17 +323,29 @@ img.toggle-logo {
 }
 
 .title {
+  font-size: 25px;
+  position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 32;
-  position: absolute;
   top: 0;
   width: 100vw;
   height: 100vh;
+  text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+
   background-color: white;
-  /* animation: hideLoadingScreen 2s 2s ease forwards; */
+  background-image: url(/static/image/map2.png);
+  background-repeat: no-repeat;
+  background-size: 900px;
+  background-position: 50% 50%;
+  /* animation: hideLoadingScreen 2s 2s ease forwards;*/
+}
+
+img.map2 {
+  position: absolute;
+  width: 600px;
+  height: 500px;
 }
 
 /* @keyframes hideLoadingScreen {
@@ -351,8 +362,12 @@ img.toggle-logo {
 } */
 
 p.start {
-  font-size: 20px;
-  animation: blink 0.7s step-end infinite;
+  font-size: 30px;
+  border: 3px solid black;
+  border-radius: 20px;
+  background-color: burlywood;
+  padding: 10px;
+  animation: blink 1s step-end infinite;
 }
 
 @keyframes blink {
