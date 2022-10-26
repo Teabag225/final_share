@@ -19,21 +19,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
 
-
+/* 태그 */
 body {
 
     background : radial-gradient(ellipse, #13242f, hsl(0, 3%, 7%) 95%);
-    /* background-color: #13242f; */
     display: flex;
     flex-direction:column;
     justify-content: center;
     align-items: center;
-    /* height: 90vh; */
     margin: 0;
     padding: 0;
   }
 
-  canvas{
+canvas{
     position: fixed;
     top: 0;
     left: 0;
@@ -42,13 +40,13 @@ body {
     z-index: -1;
   }
 
-  h1{
+h1{
     margin-top: 30px;
     margin-bottom: 30px;
     font-family: 'OKDDUNG';
-    letter-spacing: 15px;
+    letter-spacing: 15px; /*자간*/
 
-    /* font-size: 25vmin; */
+    /*네온컬러변화*/
     --hue: 0;
     -webkit-text-fill-color: transparent; 
     -webkit-text-stroke-width: 4px;
@@ -62,110 +60,78 @@ body {
 }
   
 
-  input{
+input{
     width: 100px;
     margin-right: 20px;
-    
   }
 
+ /* 클래스*/
 .input > label {
     color: white;
     font-family: 'HBIOS-SYS';
   }
-  /* .card{
-    display: inline-block;
-  }
-   */
-  
-   .div1 {
+ 
+.div1 {
     display : flex;
     flex-direction:row;
     position: relative;
-    /* align-items: center; */
-   }
+  }
 
-   .div1 > .card{
+.div1 > .card{
     position :relative;
-   }
-  .div1 > .noshow {
+  }
+.div1 > .noshow {
     display: none;
   }
   
   
-  .div1 > .show {
+.div1 > .show {
     display: inline-block;
-  }
+}
   
-  .cardimg {
-
+.cardimg {
     width: 90px;
     height: 130px;
     margin-left: 50px;
     margin-right: 50px;
     margin-top: 200px;
     cursor: pointer;
-    /* justify-content: space-evenly; */
-    
-    /* transform: rotate(90deg); */
   }
 
-  /* .card1 {
-      position : fixed; 
-} */
   
-  .txt1{
+.txt1{
     font-family: "HBIOS-SYS";
     position :absolute;
-    /* float: left; */
     z-index : 400;
-    /* text-align :center; */
-    
-    /* margin-bottom: 100px; */
     display: none;
-    /* flex-direction: row; */
-    /* top: 50%;
-    left: 50%;
-    transform : translate(-50%, -50%); */
     font-size :larger;
     cursor:pointer;
     color: white;
   }
 
 
-  
-  .right{
-    /* position: absolute; */
+.right{
     transform: scale(0.06) translateX(300px);
     animation: upDownPointer 1s linear infinite;
-    float: right; 
-    /* vertical-align: top; */
-    
+    float: right;     
   }
-  .left{
+
+.left{
     float: left;
     margin-top: 230px;
     margin-left: 50px;
-   
   }
-  .txt2{
+
+  .txt2 {
     white-space: nowrap; 
     position :absolute;
     z-index : 1400;
-    /* display: none; */
-    /* flex-direction: row; */
-    
     text-align :center;
     writing-mode:horizontal-tb;
-    /* padding : 5px 170px; */
     margin : 230px 65px;
     transform: rotate(90deg) rotateY(180deg);
-
-    /* top: 50%;
-    left: 50%;
-    transform : translate(-50%, -50%); */
     font-size :15pt;
     cursor:pointer;
-  
   }
 
   .btn > button{
@@ -175,18 +141,6 @@ body {
     z-index: 3000;
   }
 
-  /* .div2 > button {
-    position: relative;
-    
-    margin-left: 280px;
-  
-    display: none;
-    flex-direction: column;
-    border: none;
-    background: none;
-    transform: scale(0.7) translateY(63px);
-  } */
-  
   .div2{
     /* flex-direction: row; */
     font-family: "HBIOS-SYS";
@@ -202,13 +156,6 @@ body {
     z-index: 300;
     
   }
-
-  #btnY, #btnN{
-    background: none;
-    border: none;
-    transform: scale(0.7) translateY(63px);
-  }
-
 
   .div2_2{
     display: none;
@@ -244,7 +191,13 @@ body {
     justify-content: space-around;
   }
 
-  
+  /* 아이디 */
+#btnY, #btnN{
+  background: none;
+  border: none;
+  transform: scale(0.7) translateY(63px);
+}
+
   #submitBtn {
     width: 50px;
     transform: scaleX(2);
@@ -257,49 +210,52 @@ body {
     transform: scale(1.1);
   }
 
+
+/* 애니메이션 클래스 */
   
-  .slideUp {
+.slideUp {
     animation: slideUp 1s;
     animation-fill-mode: forwards;
   }
   
-  .slideDown {
+.slideDown {
     animation: slideDown 1s;
     animation-fill-mode: forwards;
   }
   
-  .rotateCard {
+.rotateCard {
     animation: rotateCard 1s linear 1;
     animation-fill-mode: forwards;
     margin-left: 210px;
     margin-bottom: 10px;
   }
   
-  .shuffle1{
+.shuffle1{
     animation: shuffle1 2s linear 1;
     position:absolute;
   }
-  .shuffle2{
+.shuffle2{
     animation: shuffle2 1.5s linear 1;
     position:absolute;
   }
-  .shuffle3{
+.shuffle3{
     animation: shuffle3 1.5s linear 1;
   }
-  .shuffle4{
+.shuffle4{
     animation: shuffle4 1.5s linear 1;
   }
-  .shuffle5{
+.shuffle5{
     animation: shuffle5 1.5s linear 1;
   }
-  .shuffle6{
+.shuffle6{
     animation: shuffle6 1.5s linear 1;
   }
   
-  .upDown{
+.upDown{
     animation: upDown 1s linear infinite;
   }
   
+  /* 애니메이션 정의 */
   @keyframes slideUp {
     from {
       transform: translateY(0);
@@ -370,31 +326,15 @@ body {
 
 
   @keyframes shuffle1{
-    /* 0% {
-      transform: translateX(0);
-    }
-    25%{
-      transform: translateX(200px);
-    }
-    50%{
-      transform: translateX(400px);
-    }
-    75%{
-      transform:  translateX(100px);
-    }
-    100%{
-      transform: translateX(200px);
-    } */
     0%{
         transform: translateX(0);
-    }
+  }
     50% {
       transform: translateX(500px) translateZ(50em);
   }
     100%{
       transform: translateX(0);
-      
-}
+  }
 }
   
   @keyframes shuffle2{
