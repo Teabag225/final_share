@@ -12,7 +12,7 @@ body {
     max-width: 500px;
     height: auto;
     cursor: crosshair;
-    cursor: url(../image/question-marks.jpeg) 53 53, crosshair;
+    cursor: url(../image/tnx.jpg) 53 53, crosshair;
 }
 
 .canvasWin {
@@ -25,7 +25,7 @@ body {
     max-width: 500px;
     height: auto;
     cursor: crosshair;
-    cursor: url(../image/win.png) 53 53, crosshair;
+    cursor: url(../image/attack.jpeg) 53 53, crosshair;
 }
 
 #scratchContainer {
