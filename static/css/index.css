@@ -33,97 +33,6 @@ body {
 ul {
   padding-left: 0;
 }
-/* 메뉴바 */
-
-/* .sidenav {
-  display: flex;
-  flex-direction: column;
-  font-family: "GyeonggiTitleM"; */
-
-/* height: 100%; Full-height: remove this if you want "auto" height */
-/* width: 30vw; Set the width of the sidebar */
-/* position: flex; Fixed Sidebar (stay in place on scroll) */
-/* z-index: 1; Stay on top */
-/* top: 0; Stay at the top */
-/* left: 0; */
-/* background-color: white; /* Black */
-/* text-align: center; */
-/* } */
-
-/* img.menu { */
-/* margin: auto; */
-/* margin-top: 60px;
-  width: 150px;
-  height: 150px; */
-/* display: flex; */
-/* align-items: center;
-  position: relative;
-} */
-
-/* a.cat {
-  padding: 5px 20px;
-  text-decoration: none;
-  font-size: 25px;
-  color: black;
-  /* display: block; */
-/* margin: 10px 50px;
-  font-weight: 700;
-} */
-
-/* a.game {
-  text-decoration: none;
-  color: black;
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-  font-size: 20px;
-}
-
-.sidenav a:hover,
-.dropdown-btn:hover {
-  transform: translateY(-10px);
-  cursor: pointer;
-  text-shadow: 12px 12px 20px #28262675;
-} */
-
-.active {
-  color: black;
-  /* margin: 0 30px; */
-}
-
-/* .dropdown-container {
-  display: none;
-} */
-
-/* .fa-caret-down {
-  float: right;
-  padding-right: 8px;
-} */
-
-/* header.menu {
-  width: 30vw;
-  background-color: white;
-  box-shadow: 5px 5px 10px gray;
-  position: relative;
-  /* display: flex; */
-/* flex-direction: column; */
-/* } */
-
-/* div.icon {
-  text-align: center;
-  background-color: black;
-  color: white;
-  font-size: 20px;
-  display: none;
-  height: 70px;
-}*/
-
-i.bi {
-  /* margin-top: 3px; */
-  color: black;
-  font-size: 20px;
-  margin-right: 10px;
-}
 
 /* 새 메뉴 바 */
 
@@ -147,12 +56,6 @@ img.menu-icon {
   width: 45px;
   height: 45px;
 }
-
-/* div.bg {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-} */
 
 .p-none {
   display: none;
@@ -212,8 +115,18 @@ div.ul-list {
 
 /* 토글 메뉴 */
 
-/* .toggle-menu {
-} */
+.active {
+  color: black;
+  /* margin: 0 30px; */
+}
+
+i.bi {
+  /* margin-top: 3px; */
+  color: black;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
 .toggle-menu-list {
   width: 100vw;
   display: flex;
@@ -247,6 +160,12 @@ a.t-game {
 
 .toggle-container {
   display: none;
+}
+
+.toggle-ls:hover {
+  transform: translateY(-5px);
+  cursor: pointer;
+  text-shadow: 12px 12px 20px #100f0f75;
 }
 
 /* .toggle-menu a:hover,
@@ -289,22 +208,6 @@ img.logo {
   height: 250px;
   margin-top: 20px;
 }
-
-/* h1.title {
-  font-size: 4rem;
-  margin-top: 40px;
-  text-shadow: 5px 5px 10px rgb(221, 189, 28);
-  color: coral;
-} */
-
-/* span.small {
-  font-size: 2rem;
-  padding: 0 10px;
-} */
-
-/* div.title_text {
-  margin-top: 30px;
-} */
 
 #search-item {
   width: 400px;
@@ -422,11 +325,85 @@ a.nav-link {
 
   div.icon {
     display: flex;
+    cursor: pointer;
+  }
+
+  div.modal.modal-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background-color: rgba(0, 0, 0, 0.3); */
+    /* box-shadow: 0 8px 32px 0 gray; */
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  div.modal-content {
+    background-color: white;
+    box-shadow: 0 8px 32px 0 gray;
+    backdrop-filter: blur(13.5px);
+    -webkit-backdrop-filter: blur(13.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: 480px;
+    height: 700px;
+    position: relative;
+    /* top: -100px; */
+    padding: 10px;
+  }
+
+  input#menu,
+  input#price {
+    border-radius: 10px;
+    border: 2px solid black;
+    width: 130px;
+    height: 30px;
+    padding-left: 10px;
+  }
+  div.result > p.payment {
+    margin-left: 250px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 615px) {
+  nav.menu-list {
+    width: 100vw;
+    /* height: 100%; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "GyeonggiTitleM";
+  }
+  div.ul-list {
+    display: none;
+  }
+
+  img.logo {
+    display: none;
+  }
+
+  img.toggle-logo {
+    display: flex;
+    width: 400px;
+    height: 200px;
+  }
+
+  div.icon {
+    display: flex;
   }
 }
 
 @media (min-width: 820px) {
-  .toggle-menu {
+  .toggle-menu-list {
     display: none;
   }
 }
@@ -443,10 +420,10 @@ a.nav-link {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.3);
-  box-shadow: 0 8px 32px 0 gray;
-  backdrop-filter: blur(1.5px);
-  -webkit-backdrop-filter: blur(1.5px);
+  /* background-color: rgba(0, 0, 0, 0.3); */
+  /* box-shadow: 0 8px 32px 0 gray; */
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
@@ -465,36 +442,21 @@ a.nav-link {
   padding: 10px;
 }
 
-/* #modal .title {
-  padding-left: 10px;
-  display: inline;
-  text-shadow: 1px 1px 2px gray;
-  color: black;
-}
-#modal .title h2 {
-  display: inline;
-} */
-
 .close-area {
-  display: inline;
-  float: right;
+  display: flex;
+  justify-content: flex-end;
   padding-right: 10px;
   cursor: pointer;
   text-shadow: 1px 1px 2px gray;
   color: black;
 }
 
-/* #modal .content {
-  margin-top: 20px;
-  padding: 0px 10px;
-  text-shadow: 1px 1px 2px gray;
-  color: black;
-} */
-
 .stop-scroll {
   height: 100%;
   overflow: hidden;
 }
+
+/* 카드 */
 
 /* 초기화 링크 텍스트 수정 */
 .card > a {
@@ -502,19 +464,28 @@ a.nav-link {
   color: black;
 }
 
-#cards {
+div.product-list {
+  margin-top: 50px;
+  /* margin-left: 60px; */
   display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 div.card {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 0.25rem;
-  margin-top: 50px;
-  margin-left: 20px;
-  width: 30%;
+  /* display: grid; */
+  /* grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); */
+  /* gap: 0.25rem; */
+  /* margin-top: 50px; */
+  /* margin-left: 20px; */
+  /* width: 30%; */
+  /* margin: 20px; */
+  width: 400px;
+  height: 600px;
+  margin-bottom: 30px;
+  margin: 20px;
 }
 
 .hide {
@@ -534,3 +505,9 @@ div.card {
 }  */
 /* card 위치 auto-fill로 자동 위치 설정 */
 /* grid-template-columns: repeat(auto-fill); */
+
+img.card-img-top {
+  position: relative;
+  width: 100%;
+  height: 300px;
+}

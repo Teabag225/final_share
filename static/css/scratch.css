@@ -1,67 +1,362 @@
-body {
-    margin: 0;
+@font-face {
+  font-family: "HBIOS-SYS";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/HBIOS-SYS.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
 }
 
+@font-face {
+  font-family: "GyeonggiTitleM";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/GyeonggiTitleM.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "GyeonggiTitleM";
+}
+
+/* p {
+  position: absolute;
+  top: 300px;
+  left: 300px;
+} */
+
 .canvas {
-    display: inline-flex;
-    margin: 0 auto;
-    background-image: url('../image/tnx.jpg');
-    background-image: -webkit-image-set(url('../image/tnx.jpg') 2x);
-    background-size: cover;
-    width: 500px;
-    max-width: 500px;
-    height: auto;
-    cursor: crosshair;
-    cursor: url(../image/tnx.jpg) 53 53, crosshair;
+  display: inline-flex;
+  margin: 0 auto;
+  background-image: url("../image/tnx.jpg");
+  background-image: -webkit-image-set(url("../image/tnx.jpg") 2x);
+  background-size: cover;
+  width: 500px;
+  max-width: 500px;
+  height: auto;
+  cursor: crosshair;
+  cursor: url(../image/tnx.jpg) 53 53, crosshair;
 }
 
 .canvasWin {
-    display: inline-flex;
-    margin: 0 auto;
-    background-image: url('../image/attack.jpeg');
-    background-image: -webkit-image-set(url('../image/attack.jpeg') 2x);
-    background-size: cover;
-    width: 500px;
-    max-width: 500px;
-    height: auto;
-    cursor: crosshair;
-    cursor: url(../image/attack.jpeg) 53 53, crosshair;
+  display: inline-flex;
+  margin: 0 auto;
+  background-image: url("../image/attack.jpeg");
+  background-image: -webkit-image-set(url("../image/attack.jpeg") 2x);
+  background-size: cover;
+  width: 500px;
+  max-width: 500px;
+  height: auto;
+  cursor: crosshair;
+  cursor: url(../image/win.png) 53 53, crosshair;
+
 }
 
 #scratchContainer {
-    text-align: center;
-    font-family: Avenir, sans-serif;
+  margin-top: 50px;
+  text-align: center;
+  font-family: Avenir, sans-serif;
 }
 
 #scratchContainer figcaption {
-    margin-top: 2rem;
+  margin-top: 2rem;
 }
 
 /* 텍스트 중앙 정렬 */
 .but {
-    text-align: center;
+  text-align: center;
 }
 
 /* 버튼 */
 button {
-    margin: 30px 0px 30px 30px;
-    width: 80px;
-    height: 30px;
-    font-size: 1rem;
+  margin: 30px 0px 30px 30px;
+  width: 80px;
+  height: 30px;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
-/* 주사위 안보이기 */
+button.result {
+  width: 150px;
+}
+
+button.start {
+  width: 150px;
+}
+
+/* 카드 안보이기 */
 .noshow {
-    display: none;
+  display: none;
 }
 
-/* 주사위 보이기 */
+/* 카드 보이기 */
 .show {
-    display: inline-flex;
+  display: inline-flex;
 }
 
 /* 초기화 링크 텍스트 수정 */
 a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
+}
+
+/* 텍스트 */
+
+.title img {
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+div.title {
+  text-align: center;
+}
+
+h1 {
+  font-family: "HBIOS-SYS";
+  font-size: 3rem;
+  color: black;
+}
+
+span.tip {
+  color: red;
+}
+
+/* 버튼 */
+button {
+  cursor: pointer;
+  margin: 30px 0px 30px 30px;
+  width: 100px;
+  height: 40px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 2px solid;
+  background-color: aquamarine;
+}
+
+button:hover {
+  background-color: rgb(191, 232, 218);
+}
+
+/* 메뉴 바 */
+
+.active {
+  color: black;
+  /* margin: 0 30px; */
+}
+
+i.bi {
+  /* margin-top: 3px; */
+  color: black;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+nav.menu-list {
+  width: 100vw;
+  /* height: 100%; */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  /* text-align: center; */
+  margin: 20px 80px 20px 0px;
+  font-family: "GyeonggiTitleM";
+}
+
+div.icon {
+  display: none;
+  font-size: 20px;
+}
+
+img.menu-icon {
+  width: 45px;
+  height: 45px;
+}
+
+.p-none {
+  display: none;
+}
+
+a.ls:hover .p-none {
+  margin-top: 8px;
+  display: block;
+}
+
+a.ls:hover .menu-icon {
+  display: none;
+}
+
+a.ls {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 0px 20px 0 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  /* margin-left: 20px; */
+}
+
+a.game {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  font-size: 15px;
+  text-align: center;
+}
+
+div.dropdown-container {
+  display: none;
+}
+
+div.ul-list {
+  display: flex;
+  flex-direction: row;
+  /* margin: 50px; */
+  text-decoration: none;
+  color: black;
+
+  /* margin-top: 10px; */
+  /* font-weight: 300; */
+}
+
+/* 토글 메뉴 */
+
+/* .toggle-menu {
+} */
+.toggle-menu-list {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  margin-left: 40px;
+  /* text-align: center; */
+}
+
+a.toggle-ls {
+  text-decoration: none;
+  color: black;
+  margin: 10px 0;
+  /* margin-left: 350px; */
+  font-size: 15px;
+  padding-left: 20px;
+}
+
+a.toggle-ls:hover {
+  transform: translateY(-5px);
+  cursor: pointer;
+  text-shadow: 10px 10px 10px #2f2d2d75;
+}
+
+a.t-game {
+  text-decoration: none;
+  color: rgb(154, 151, 151);
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+  font-size: 15px;
+  margin-left: 10px;
+}
+
+.d-none {
+  display: none;
+}
+
+.toggle-dropdown-btn {
+  cursor: pointer;
+}
+
+.toggle-container {
+  display: none;
+}
+
+/* .toggle-menu a:hover,
+  .toggle-dropdown-btn:hover {
+    color: #847f7f;
+  } */
+
+img.toggle-logo {
+  display: none;
+}
+
+@media (max-width: 1020px) {
+  body {
+    margin: 0;
+  }
+  nav.menu-list {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+    margin-top: 20px;
+    font-family: "GyeonggiTitleM";
+  }
+
+  div.ul-list {
+    display: none;
+  }
+
+  img.logo {
+    display: none;
+  }
+
+  div.icon {
+    display: flex;
+  }
+}
+
+@media (min-width: 1020px) {
+  .toggle-menu-list {
+    display: none;
+  }
+}
+
+/* .cover-none {
+  display: flex;
+} */
+
+.title-none {
+  display: none;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 32;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  /* animation: hideLoadingScreen 2s 2s ease forwards; */
+}
+
+/* @keyframes hideLoadingScreen {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+} */
+
+p.start {
+  font-size: 20px;
+  animation: blink 0.7s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
 }

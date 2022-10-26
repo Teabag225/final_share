@@ -1,3 +1,46 @@
+
+// 메뉴바
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+    dropdown[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var dropdownContent = this.nextElementSibling;
+        if (dropdownContent.style.display === "block") {
+            dropdownContent.style.display = "none";
+        } else {
+            dropdownContent.style.display = "block";
+        }
+    });
+}
+
+var t_dropdown = document.getElementsByClassName("toggle-dropdown-btn");
+var i;
+
+for (i = 0; i < t_dropdown.length; i++) {
+    t_dropdown[i].addEventListener("click", function () {
+        this.classList.toggle("t_active");
+        var t_dropdownContent = this.nextElementSibling;
+        if (t_dropdownContent.style.display === "block") {
+            t_dropdownContent.style.display = "none";
+        } else {
+            t_dropdownContent.style.display = "block";
+        }
+    });
+}
+
+//토클 메뉴
+
+const iconMenu = document.querySelector(".icon");
+const toggleMenu = document.querySelector(".toggle-menu");
+
+iconMenu.addEventListener("click", function () {
+    toggleMenu.classList.toggle("d-none");
+});
+
+
+
 // 마커를 담을 배열입니다
 var markers = [];
 

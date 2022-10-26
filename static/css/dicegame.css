@@ -22,28 +22,41 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "GyeonggiTitleM";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/GyeonggiTitleM.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* 배경색 */
 body {
-  background-color: white;
   font-family: "OTWelcomeBA";
-
-  overflow: scroll;
+  /* overflow: scroll; */
+  margin: 0;
+  padding: 0;
 }
 
 /* 내용물 정렬 */
 .wrapper {
-  width: 80%;
+  /* width: 80%; */
   margin: auto;
   text-align: center;
 }
 
-div.title {
+/* hr {
+  border: 1px dashed;
+} */
+
+div.line {
+  position: relative;
   margin: 0 250px;
-  border-top: 3px solid black;
-  border-bottom: 3px solid black;
+  border-bottom: 2px solid black;
 }
 
 h1 {
+  margin-top: 50px;
   font-family: "HBIOS-SYS";
   font-size: 3rem;
   color: black;
@@ -56,7 +69,7 @@ span.tip {
 h1.result {
   font-family: "OTWelcomeBA";
 
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 .dice-area {
@@ -68,6 +81,7 @@ h1.result {
 p {
   font-size: 1rem;
   color: black;
+  font-weight: 700;
 }
 
 img.home {
@@ -99,6 +113,7 @@ button {
   width: 100px;
   height: 40px;
   font-size: 1rem;
+  font-weight: 700;
   border-radius: 10px;
   border: 2px solid;
   background-color: aquamarine;
@@ -151,4 +166,235 @@ particule {
   width: 30px;
   height: 30px;
   box-shadow: 1px 1px 4px #eb6383;
+}
+
+/* 메뉴바 */
+
+nav.menu-list {
+  width: 100vw;
+  /* height: 100%; */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  /* text-align: center; */
+  /* margin: 40px 60px 0 40px; */
+  margin: 0 80px 0 0px;
+  padding: 20px 0 20px 0;
+  font-family: "GyeonggiTitleM";
+  /* background-color: #eb6383; */
+}
+
+div.icon {
+  display: none;
+  font-size: 20px;
+}
+
+img.menu-icon {
+  width: 45px;
+  height: 45px;
+}
+
+.p-none {
+  display: none;
+}
+
+a.ls:hover .p-none {
+  margin-top: 8px;
+  display: block;
+}
+
+a.ls:hover .menu-icon {
+  display: none;
+}
+
+a.ls {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 0 20px 0 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  /* margin-left: 20px; */
+}
+
+a.game {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  font-size: 15px;
+  text-align: center;
+}
+
+div.dropdown-container {
+  display: none;
+}
+
+div.ul-list {
+  display: flex;
+  flex-direction: row;
+  /* margin: 50px; */
+  text-decoration: none;
+  color: black;
+
+  /* margin-top: 10px; */
+  /* font-weight: 300; */
+}
+
+/* 토글메뉴 */
+
+.active {
+  color: black;
+  /* margin: 0 30px; */
+}
+
+i.bi {
+  /* margin-top: 3px; */
+  color: black;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.toggle-menu-list {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  /* text-align: center; */
+  margin-left: 40px;
+}
+
+a.toggle-ls {
+  text-decoration: none;
+  color: black;
+  margin: 10px 0;
+  /* margin-left: 350px; */
+  font-size: 15px;
+  padding-left: 20px;
+}
+
+a.toggle-ls:hover {
+  transform: translateY(-5px);
+  cursor: pointer;
+  text-shadow: 10px 10px 10px #2f2d2d75;
+}
+
+a.t-game {
+  text-decoration: none;
+  color: rgb(154, 151, 151);
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+  font-size: 15px;
+  margin-left: 10px;
+}
+
+.d-none {
+  display: none;
+}
+
+.toggle-dropdown-btn {
+  cursor: pointer;
+}
+
+.toggle-container {
+  display: none;
+}
+
+img.toggle-logo {
+  display: none;
+}
+
+@media (max-width: 890px) {
+  body {
+    margin: 0;
+  }
+  nav.menu-list {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+    margin-top: 20px;
+    font-family: "GyeonggiTitleM";
+  }
+  div.ul-list {
+    display: none;
+  }
+
+  img.logo {
+    display: none;
+  }
+
+  div.icon {
+    display: flex;
+  }
+}
+
+@media (min-width: 890px) {
+  .toggle-menu-list {
+    display: none;
+  }
+}
+
+/* 로딩창 구현 */
+
+/* 로딩창 숨기기 */
+.ds-none {
+  display: none;
+}
+
+/* 로딩창 보이게 하기 */
+.ds-flex {
+  display: flex;
+}
+
+p.ls-text {
+  margin-left: 20px;
+  font-size: 20px;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 32;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  animation: hideLoadingScreen 1s 1s ease forwards;
+}
+
+@keyframes hideLoadingScreen {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.loading-diceimg {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  animation: loadingCircle 1s infinite;
+}
+
+@keyframes loadingCircle {
+  from {
+    transform: none;
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
