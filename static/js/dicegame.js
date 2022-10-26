@@ -60,13 +60,24 @@ function run() {
     // 유저숫자만큼 반복
     //주사위 숫자만큼 이미지 가져오기
     let dice = "./static/image/dice" + numArray[i] + ".png";
-    document.querySelectorAll("img")[i + 1].setAttribute("src", dice);
+    document.querySelectorAll(".user-img")[i].setAttribute("src", dice);
     if (numArray[i] < min) {
       loser = i + 1;
       min = numArray[i]; // 최소값 추가하기
     } else {
     }
   }
+
+  // 로딩창 구현
+  let loading = document.querySelector(".loading-container");
+  if (loading.classList.contains("ds-flex") == false) {
+    loading.classList.add("ds-flex");
+  }
+  // loading.classList.toggle("ds-flex");
+
+  // 스크롤 자동 이동
+  var location = document.querySelector(".result").offsetTop;
+  window.scrollTo({ top: location, behavior: "smooth" });
 
   let particles = [];
 
@@ -117,7 +128,7 @@ function run() {
     requestAnimationFrame(render);
   }
   pop();
-  window.setTimeout(render, "80");
+  window.setTimeout(render, "4000");
 
   // LOSER text 노출
 
@@ -125,3 +136,43 @@ function run() {
     ".result"
   ).innerHTML = `🥳 USER ${loser} 님 축하합니다! 밥사주세요!!!🥳`;
 }
+
+// 메뉴바
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function () {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
+
+var t_dropdown = document.getElementsByClassName("toggle-dropdown-btn");
+var i;
+
+for (i = 0; i < t_dropdown.length; i++) {
+  t_dropdown[i].addEventListener("click", function () {
+    this.classList.toggle("t_active");
+    var t_dropdownContent = this.nextElementSibling;
+    if (t_dropdownContent.style.display === "block") {
+      t_dropdownContent.style.display = "none";
+    } else {
+      t_dropdownContent.style.display = "block";
+    }
+  });
+}
+
+//토클 메뉴
+
+const iconMenu = document.querySelector(".icon");
+const toggleMenu = document.querySelector(".toggle-menu");
+
+iconMenu.addEventListener("click", function () {
+  toggleMenu.classList.toggle("d-none");
+});

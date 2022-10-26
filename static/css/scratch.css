@@ -1,19 +1,3 @@
-/* @font-face {
-  font-family: "Cafe24Ssurround";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff")
-    format("woff");
-  font-weight: normal;
-  font-style: normal;
-} */
-
-@font-face {
-  font-family: "OTWelcomeBA";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeBA.woff2")
-    format("woff2");
-  font-weight: normal;
-  font-style: normal;
-}
-
 @font-face {
   font-family: "HBIOS-SYS";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/HBIOS-SYS.woff2")
@@ -30,75 +14,52 @@
   font-style: normal;
 }
 
-/* 배경색 */
 body {
-  font-family: "OTWelcomeBA";
-  /* overflow: scroll; */
   margin: 0;
   padding: 0;
+  font-family: "GyeonggiTitleM";
 }
 
-/* 내용물 정렬 */
-.wrapper {
-  /* width: 80%; */
-  margin: auto;
-  text-align: center;
-}
-
-/* hr {
-  border: 1px dashed;
+/* p {
+  position: absolute;
+  top: 300px;
+  left: 300px;
 } */
 
-div.line {
-  position: relative;
-  margin: 0 250px;
-  border-bottom: 2px solid black;
+.canvas {
+  display: inline-flex;
+  margin: 0 auto;
+  background-image: url("../image/tnx.jpg");
+  background-image: -webkit-image-set(url("../image/tnx.jpg") 2x);
+  background-size: cover;
+  width: 500px;
+  max-width: 500px;
+  height: auto;
+  cursor: crosshair;
+  cursor: url(../image/tnx.jpg) 53 53, crosshair;
 }
 
-h1 {
+.canvasWin {
+  display: inline-flex;
+  margin: 0 auto;
+  background-image: url("../image/attack.jpeg");
+  background-image: -webkit-image-set(url("../image/attack.jpeg") 2x);
+  background-size: cover;
+  width: 500px;
+  max-width: 500px;
+  height: auto;
+  cursor: crosshair;
+  cursor: url(../image/win.png) 53 53, crosshair;
+}
+
+#scratchContainer {
   margin-top: 50px;
-  font-family: "HBIOS-SYS";
-  font-size: 3rem;
-  color: black;
-}
-
-span.tip {
-  color: red;
-}
-
-h1.result {
-  font-family: "OTWelcomeBA";
-
-  margin-top: 40px;
-}
-
-.dice-area {
-  margin: 0px 50px;
   text-align: center;
-  display: inline-block;
+  font-family: Avenir, sans-serif;
 }
 
-p {
-  font-size: 1rem;
-  color: black;
-  font-weight: 700;
-}
-
-img.home {
-  width: 50px;
-  height: 50px;
-  margin-top: 60px;
-  margin-left: 80px;
-}
-
-/* 이미지 크기  */
-img {
-  width: 100px;
-  height: 160px;
-}
-
-.dice-area img {
-  width: 200px;
+#scratchContainer figcaption {
+  margin-top: 2rem;
 }
 
 /* 텍스트 중앙 정렬 */
@@ -108,28 +69,29 @@ img {
 
 /* 버튼 */
 button {
-  cursor: pointer;
   margin: 30px 0px 30px 30px;
-  width: 100px;
-  height: 40px;
+  width: 80px;
+  height: 30px;
   font-size: 1rem;
   font-weight: 700;
-  border-radius: 10px;
-  border: 2px solid;
-  background-color: aquamarine;
 }
 
-button:hover {
-  background-color: rgb(191, 232, 218);
+button.result {
+  width: 150px;
 }
-/* 주사위 안보이기 */
+
+button.start {
+  width: 150px;
+}
+
+/* 카드 안보이기 */
 .noshow {
   display: none;
 }
 
-/* 주사위 보이기 */
+/* 카드 보이기 */
 .show {
-  display: inline-block;
+  display: inline-flex;
 }
 
 /* 초기화 링크 텍스트 수정 */
@@ -138,37 +100,58 @@ a {
   color: black;
 }
 
-/* img.wow {
-  width: 80px;
+/* 텍스트 */
+
+.title img {
+  width: 50px;
   height: 50px;
-  display: none;
-} */
-
-/* @keyframes slide-in {
-  0% {
-    transform: scale(2) rotate(60deg);
-    opacity: 0;
-  }
-} */
-
-@keyframes bump-in {
-  0% {
-    transform: scale(0);
-    opacity: 0;
-  }
+  margin-left: 10px;
+  margin-top: 5px;
 }
 
-particule {
-  position: fixed;
-  top: 0;
-  left: 0;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  box-shadow: 1px 1px 4px #eb6383;
+div.title {
+  text-align: center;
 }
 
-/* 메뉴바 */
+h1 {
+  font-family: "HBIOS-SYS";
+  font-size: 3rem;
+  color: black;
+}
+
+span.tip {
+  color: red;
+}
+
+/* 버튼 */
+button {
+  cursor: pointer;
+  margin: 30px 0px 30px 30px;
+  width: 100px;
+  height: 40px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 2px solid;
+  background-color: aquamarine;
+}
+
+button:hover {
+  background-color: rgb(191, 232, 218);
+}
+
+/* 메뉴 바 */
+
+.active {
+  color: black;
+  /* margin: 0 30px; */
+}
+
+i.bi {
+  /* margin-top: 3px; */
+  color: black;
+  font-size: 20px;
+  margin-right: 10px;
+}
 
 nav.menu-list {
   width: 100vw;
@@ -177,11 +160,8 @@ nav.menu-list {
   flex-direction: row;
   justify-content: flex-end;
   /* text-align: center; */
-  /* margin: 40px 60px 0 40px; */
-  margin: 0 80px 0 0px;
-  padding: 20px 0 20px 0;
+  margin: 20px 80px 20px 0px;
   font-family: "GyeonggiTitleM";
-  /* background-color: #eb6383; */
 }
 
 div.icon {
@@ -212,7 +192,7 @@ a.ls {
   color: black;
   cursor: pointer;
   font-size: 15px;
-  padding: 0 20px 0 0;
+  padding: 0px 20px 0 0px;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -244,26 +224,16 @@ div.ul-list {
   /* font-weight: 300; */
 }
 
-/* 토글메뉴 */
+/* 토글 메뉴 */
 
-.active {
-  color: black;
-  /* margin: 0 30px; */
-}
-
-i.bi {
-  /* margin-top: 3px; */
-  color: black;
-  font-size: 20px;
-  margin-right: 10px;
-}
-
+/* .toggle-menu {
+} */
 .toggle-menu-list {
   width: 100vw;
   display: flex;
   flex-direction: row;
-  /* text-align: center; */
   margin-left: 40px;
+  /* text-align: center; */
 }
 
 a.toggle-ls {
@@ -303,11 +273,16 @@ a.t-game {
   display: none;
 }
 
+/* .toggle-menu a:hover,
+  .toggle-dropdown-btn:hover {
+    color: #847f7f;
+  } */
+
 img.toggle-logo {
   display: none;
 }
 
-@media (max-width: 890px) {
+@media (max-width: 1020px) {
   body {
     margin: 0;
   }
@@ -319,6 +294,7 @@ img.toggle-logo {
     margin-top: 20px;
     font-family: "GyeonggiTitleM";
   }
+
   div.ul-list {
     display: none;
   }
@@ -332,43 +308,35 @@ img.toggle-logo {
   }
 }
 
-@media (min-width: 890px) {
+@media (min-width: 1020px) {
   .toggle-menu-list {
     display: none;
   }
 }
 
-/* 로딩창 구현 */
+/* .cover-none {
+  display: flex;
+} */
 
-/* 로딩창 숨기기 */
-.ds-none {
+.title-none {
   display: none;
 }
 
-/* 로딩창 보이게 하기 */
-.ds-flex {
+.title {
   display: flex;
-}
-
-p.ls-text {
-  margin-left: 20px;
-  font-size: 20px;
-}
-
-.loading {
-  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   z-index: 32;
-  position: fixed;
+  position: absolute;
   top: 0;
   width: 100vw;
   height: 100vh;
   background-color: white;
-  animation: hideLoadingScreen 2s 2s ease forwards;
+  /* animation: hideLoadingScreen 2s 2s ease forwards; */
 }
 
-@keyframes hideLoadingScreen {
+/* @keyframes hideLoadingScreen {
   0% {
     opacity: 1;
   }
@@ -379,22 +347,15 @@ p.ls-text {
     opacity: 0;
     visibility: hidden;
   }
+} */
+
+p.start {
+  font-size: 20px;
+  animation: blink 0.7s step-end infinite;
 }
 
-.loading-diceimg {
-  width: 50px;
-  height: 50px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  animation: loadingCircle 1s infinite;
-}
-
-@keyframes loadingCircle {
-  from {
-    transform: none;
-  }
-  to {
-    transform: rotate(360deg);
+@keyframes blink {
+  50% {
+    opacity: 0;
   }
 }

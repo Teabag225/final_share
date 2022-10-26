@@ -29,19 +29,24 @@ for (i = 0; i < t_dropdown.length; i++) {
   });
 }
 
-// Modal 창 구현
-const modal = document.querySelector(".modal");
-const btnModal = document.querySelector(".popup");
-const btnModal2 = document.querySelector(".popup2");
-btnModal.addEventListener("click", (e) => {
-  modal.style.display = "flex";
-  document.body.classList.add("stop-scroll");
+//토클 메뉴
+
+const iconMenu = document.querySelector(".icon");
+const toggleMenu = document.querySelector(".toggle-menu");
+
+iconMenu.addEventListener("click", function () {
+  toggleMenu.classList.toggle("d-none");
 });
 
-btnModal2.addEventListener("click", (e) => {
-  modal.style.display = "flex";
-  document.body.classList.add("stop-scroll");
-});
+// Modal 창 구현
+const modal = document.querySelector(".modal");
+const btnModal = document.querySelectorAll(".popup");
+
+for (let i = 0; i < btnModal.length; i++) {
+  btnModal[i].addEventListener("click", (e) => {
+    modal.style.display = "flex";
+  });
+}
 
 // X 부분 클릭하면 창 닫기
 const closeBtn = modal.querySelector(".close-area");
@@ -74,15 +79,6 @@ modal.addEventListener("click", (e) => {
   }
 });
 
-//토클 메뉴
-
-const iconMenu = document.querySelector(".icon");
-const toggleMenu = document.querySelector(".toggle-menu");
-
-iconMenu.addEventListener("click", function () {
-  toggleMenu.classList.toggle("d-none");
-});
-
 // 카드 숨기기
 
 function changeStyle() {
@@ -102,7 +98,7 @@ function changeStyle() {
 }
 
 // 서치 기능
-const search = () => {
+function search() {
   const searchbox = document.getElementById("search-item").value.toUpperCase();
   const storeitems = document.getElementById("product-list");
   const product = document.querySelectorAll(".card");
@@ -121,4 +117,12 @@ const search = () => {
       }
     }
   }
-};
+}
+
+//엔터키 기능
+// document.getElementById("search-item").addEventListener("keypress",function(e){
+//   e.preventDefault();
+//   if(e.key === '13'){
+//     document.getElementById("submit").click();
+//   }
+// });
