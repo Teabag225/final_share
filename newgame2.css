@@ -114,18 +114,39 @@ body {
 } */
   
   .txt1{
+    font-family: "HBIOS-SYS";
     position :absolute;
+    /* float: left; */
     z-index : 400;
-    text-align :center;
-    margin : 400px 180px;
+    /* text-align :center; */
+    
+    /* margin-bottom: 100px; */
     display: none;
+    /* flex-direction: row; */
     /* top: 50%;
     left: 50%;
     transform : translate(-50%, -50%); */
     font-size :larger;
     cursor:pointer;
+    color: white;
   }
 
+
+  
+  .right{
+    /* position: absolute; */
+    transform: scale(0.06) translateX(300px);
+    animation: upDownPointer 1s linear infinite;
+    float: right; 
+    /* vertical-align: top; */
+    
+  }
+  .left{
+    float: left;
+    margin-top: 230px;
+    margin-left: 50px;
+   
+  }
   .txt2{
     white-space: nowrap; 
     position :absolute;
@@ -154,7 +175,7 @@ body {
     z-index: 3000;
   }
 
-  .div2 > button {
+  /* .div2 > button {
     position: relative;
     
     margin-left: 280px;
@@ -164,10 +185,50 @@ body {
     border: none;
     background: none;
     transform: scale(0.7) translateY(63px);
+  } */
+  
+  .div2{
+    /* flex-direction: row; */
+    font-family: "HBIOS-SYS";
+    flex-direction: column;
+    /* margin-left: 280px; */
   }
-  
-  
-  
+
+  .div2_1{
+    display: none;
+    flex-direction: row;
+    /* position: relative; */
+    margin-left: 280px;
+    z-index: 300;
+    
+  }
+
+  #btnY, #btnN{
+    background: none;
+    border: none;
+    transform: scale(0.7) translateY(63px);
+  }
+
+
+  .div2_2{
+    display: none;
+    flex-direction: row;
+    /* position: relative; */
+    margin-left: 280px;
+    z-index: 300;
+    
+  }
+
+  .btnLeft{
+    color: antiquewhite;
+    float: left;
+  }
+
+  .btnRight{
+    color: antiquewhite;
+    float: right;
+    transform: translateY(55px);
+  }
   
   button img {
     margin-top: 20px;
@@ -183,6 +244,7 @@ body {
     justify-content: space-around;
   }
 
+  
   #submitBtn {
     width: 50px;
     transform: scaleX(2);
@@ -287,6 +349,26 @@ body {
       transform: translateY(0) scaleX(2);
     }
   }
+
+  @keyframes upDownPointer{
+    0%{
+      transform: translateX(-90px) translateY(-273px) scale(0.06);
+    }
+    25%{
+      transform: translateX(-90px) translateY(-265px) scale(0.06);
+    }
+    50%{
+      transform: translateX(-90px) translateY(-273px) scale(0.06);
+    }
+    70%{
+      transform: translateX(-90px) translateY(-281px) scale(0.06);
+    }
+    100%{
+      transform: translateX(-90px) translateY(-273px) scale(0.06);
+    }
+  }
+
+
   @keyframes shuffle1{
     /* 0% {
       transform: translateX(0);
@@ -404,6 +486,7 @@ body {
   /* 팝업창 */
   .modal {
     position: absolute;
+    z-index: 5000;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
