@@ -7,7 +7,7 @@
     <title>Document</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="./newgame2.css" />
+    <link rel="stylesheet" href="./static/css/newgame2.css" />
 
 
   </head>
@@ -28,7 +28,7 @@
     <div class="btn">
         <button class="add" type="button" onclick="add()"><img src="./static/image/plus.png" alt="유저추가"></button>
         <button class="remove" type="button" onclick="remove()"><img src="./static/image/remove.png" alt="유저제거"></button>
-        <button class="upDown" id="submitBtn" type="submit" onclick="run()"><img src="./static/image/start-button.png" class="start-button" alt="실행버튼"></button>
+        <button class="upDown" id="submitBtn" type="submit" onclick="run(), shuffle()"><img src="./static/image/start-button.png" class="start-button" alt="실행버튼"></button>
         <button id="shuffle"><img src="/static/image/shuffle.png" onclick="shuffle()" alt="셔플버튼"></button>
         <button id="reset" type="button" onclick="reset()"><img src="./static/image/reset.png" alt="새로고침"></button>
     </div>
@@ -112,7 +112,7 @@
           <p id="thisone">"이걸로 계산해주세요"</p>
         </div>
       </div>
-
+      <br>
       <div class="div2_2">
         <div class="btnLeft">
           <button id="btnN"><img src="/static/image/cancel.png"/></button>
@@ -152,7 +152,7 @@
   </script>
 
   <!-- JavaSript -->
-  <script src="./newgame2.js"></script>
+  <script src="./static/js/newgame2.js"></script>
     
     
 </html>

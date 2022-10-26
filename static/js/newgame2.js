@@ -182,6 +182,7 @@ for ( var i = 0; i < inputBorder.length; i++ ) {
 
   arr[i] = inputBorder[i].value; //빈 배열에 값 삽입
   imgCard[i].style.position = "absolute";
+  // imgCard[i].style.marginright="10px";
   txt1.style.display = "inline-block";
 }
 else{popUp.style.display="inline-flex"; //User에 값을 입력하지 않을 경우
@@ -205,7 +206,7 @@ txt1.addEventListener('click', function(){
   const rTxt =  arr[r].toString();
   console.log(rTxt);
   
-  // const txt2 = frontImg.querySelector('.txt2 > p');
+
 
   //CLICKHERE 텍스트 사라짐
   txt1.style.display = "none"; 
@@ -247,7 +248,7 @@ function yes() {
 function nono() {
 
   const frontImg = imgCard[0];
-  // const txt2 = frontImg.querySelector('.txt2 > p');
+
 
   //카드 다시 내려놓기
   frontImg.classList.add("slideDown");
@@ -282,23 +283,26 @@ btnTxtN.addEventListener('click',nono);
 //5. 카드 셔플 애니메이션
 
 function shuffle(){
+   
 
-cardone.classList.add("shuffle1");
-cardtwo.classList.add("shuffle2");
-cardthr.classList.add("shuffle3");
-cardfour.classList.add("shuffle4");
-cardfive.classList.add("shuffle5");
-cardsix.classList.add("shuffle6");
 
-// setTimeout(function(){
-//   cardone.classList.remove("shuffle1");
-//   cardtwo.classList.remove("shuffle2");
-//   cardthr.classList.remove("shuffle3");
-//   cardfour.classList.remove("shuffle4");
-//   cardfive.classList.remove("shuffle5");
-//   cardsix.classList.remove("shuffle6");
+document.querySelector('#card1').classList.add("shuffle1");
+document.querySelector('#card2').classList.add("shuffle2");
+document.querySelector('#card3').classList.add("shuffle3");
+document.querySelector('#card4').classList.add("shuffle4");
+document.querySelector('#card5').classList.add("shuffle5");
+document.querySelector('#card6').classList.add("shuffle6");
+  
 
-// }, 5000);
+setTimeout(function(){
+  document.querySelector('#card1').classList.remove("shuffle1");
+  document.querySelector('#card2').classList.remove("shuffle2");
+  document.querySelector('#card3').classList.remove("shuffle3");
+  document.querySelector('#card4').classList.remove("shuffle4");
+  document.querySelector('#card5').classList.remove("shuffle5");
+  document.querySelector('#card6').classList.remove("shuffle6");
+  
+}, 1000);
 }
 
 // 6.초기화버튼 (새로고침)

@@ -74,7 +74,9 @@ input{
 .div1 {
     display : flex;
     flex-direction:row;
-    position: relative;
+    
+    /* position: relative; */
+    /* position: absolute; */
   }
 
 .div1 > .card{
@@ -90,11 +92,13 @@ input{
 }
   
 .cardimg {
+    
     width: 90px;
     height: 130px;
     margin-left: 50px;
     margin-right: 50px;
     margin-top: 200px;
+    box-shadow: -1rem 0 3rem #000;
     cursor: pointer;
   }
 
@@ -111,9 +115,10 @@ input{
 
 
 .right{
-    transform: scale(0.06) translateX(300px);
+    transform: scale(0.06) ;
     animation: upDownPointer 1s linear infinite;
     float: right;     
+    /* left: 100px; */
   }
 
 .left{
@@ -152,7 +157,7 @@ input{
     display: none;
     flex-direction: row;
     /* position: relative; */
-    margin-left: 280px;
+    margin-left: 00px;
     z-index: 300;
     
   }
@@ -161,7 +166,7 @@ input{
     display: none;
     flex-direction: row;
     /* position: relative; */
-    margin-left: 280px;
+    margin-left: 00px;
     z-index: 300;
     
   }
@@ -231,24 +236,28 @@ input{
   }
   
 .shuffle1{
-    animation: shuffle1 2s linear 1;
+    animation: shuffle1 1.3s linear 1;
     position:absolute;
   }
 .shuffle2{
-    animation: shuffle2 1.5s linear 1;
+    animation: shuffle2 1.3s linear 1;
     position:absolute;
   }
 .shuffle3{
-    animation: shuffle3 1.5s linear 1;
+    animation: shuffle3 1.3s linear 1;
+    position:absolute;
   }
 .shuffle4{
-    animation: shuffle4 1.5s linear 1;
+    animation: shuffle4 1.3s linear 1;
+    position:absolute;
   }
 .shuffle5{
-    animation: shuffle5 1.5s linear 1;
+    animation: shuffle5 1.3s linear 1;
+    position:absolute;
   }
 .shuffle6{
-    animation: shuffle6 1.5s linear 1;
+    animation: shuffle6 1.3s linear 1;
+    position:absolute;
   }
   
 .upDown{
@@ -328,40 +337,63 @@ input{
   @keyframes shuffle1{
     0%{
         transform: translateX(0);
+        z-index: -3;
   }
-    50% {
-      transform: translateX(500px) translateZ(50em);
+    25% {
+      transform: translateX(-80%);
+      z-index: 0;
   }
-    100%{
+    50%{
       transform: translateX(0);
+      z-index: 2;
   }
+    75%{
+      transform: translateX(80%);
+      z-index:0 ;
+
+    }
+    100%{
+      transform:translateX(0);
+    }
+
 }
   
   @keyframes shuffle2{
     0%{
       transform: translateX(0);
   }
-    50%{
-      transform: translateX(-500px) translateZ(20em);
+    25%{
+      transform: translateX(80%);
+      z-index: -1;
   }
+    50%{
+      transform: translateX(0);
+    }
+    75%{
+      transform: translateX(-80%);
+      z-index: -1;
+    }
     100%{
-      transform: translateX(-150px);
-      
+      transform: translateX(0);
     }
 }
+
 
   @keyframes shuffle3{
     0% {
       transform: translateX(0);
+      z-index: 5;
     }
     25%{
-      transform: translateX(30px);
+      transform: translateX(-100%);
+      z-index: -1;
     }
     50%{
-      transform: translateX(700px) ;
+      transform: translateX(0) ;
     }
     75%{
-      transform: translateX(300px);
+      transform: translateX(100%);
+      z-index: 2;
     }
     100%{
       transform:  translateX(0);
@@ -371,15 +403,20 @@ input{
   @keyframes shuffle4{
     0% {
       transform: translateX(0);
+  
+      
     }
     25%{
-      transform: translateX(-30px);
+      transform: translateX(10%);
+      z-index: 5;
     }
     50%{
-      transform: translateX(-350px);
+      transform: translateX(0);
+      z-index: -1;
     }
     75%{
-      transform: translateX(700px);
+      transform: translateX(-10%);
+      z-index: 3;
     }
     100%{
       transform: translateX(0);
@@ -391,13 +428,13 @@ input{
       transform: translateX(0);
     }
     25%{
-      transform: translateX(150px);
+      transform: translateX(-110%);
     }
     50%{
-      transform: translateX(70px);
+      transform: translateX(0);
     }
     75%{
-      transform: translateX(150px);
+      transform: translateX(110%);
     }
     100%{
       transform: translateX(0);
@@ -409,13 +446,15 @@ input{
       transform: translateX(0);
     }
     25%{
-      transform: translateX(700px);
+      transform: translateX(40%);
+      z-index: 3;
     }
     50%{
-      transform: translateX(150px);
+      transform: translateX(0);
     }
     75%{
-      transform: translateX(10px);
+      transform: translateX(-40%);
+      z-index: 2;
     }
     100%{
       transform: translateX(0) ;
