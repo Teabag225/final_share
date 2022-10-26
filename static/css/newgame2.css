@@ -221,7 +221,8 @@ button img {
   transform: scale(0.7) translateY(63px);
 }
 
-img#pointer {
+#pointer {
+  transform: translateY(20px);
   transform: scale(0.06);
   animation: upDownPointer 1s linear infinite;
   float: right;
@@ -346,19 +347,19 @@ img#pointer {
 
 @keyframes upDownPointer {
   0% {
-    transform: translateX(-90px) translateY(-273px) scale(0.06);
+    transform: translateX(-130px) translateY(-273px) scale(0.06);
   }
   25% {
-    transform: translateX(-90px) translateY(-265px) scale(0.06);
+    transform: translateX(-130px) translateY(-265px) scale(0.06);
   }
   50% {
-    transform: translateX(-90px) translateY(-273px) scale(0.06);
+    transform: translateX(-130px) translateY(-273px) scale(0.06);
   }
   70% {
-    transform: translateX(-90px) translateY(-281px) scale(0.06);
+    transform: translateX(-130px) translateY(-281px) scale(0.06);
   }
   100% {
-    transform: translateX(-90px) translateY(-273px) scale(0.06);
+    transform: translateX(-130px) translateY(-273px) scale(0.06);
   }
 }
 
