@@ -22,7 +22,15 @@ function add() {
     document.querySelector("#user6").classList.add("show");
     cnt++;
   } else {
-    alert("최대 6인입니다.");
+    Swal.fire({
+      title: "User는 최대 6명까지 가능합니다.",
+      showClass: {
+        popup: "animate__animated animate__fadeInDown",
+      },
+      hideClass: {
+        popup: "animate__animated animate__fadeOutUp",
+      },
+    });
   }
 
   var location = document.querySelector(".add").offsetTop;
@@ -44,7 +52,15 @@ function remove() {
     document.querySelector("#user3").classList.remove("show");
     cnt--;
   } else {
-    alert("최소 2인입니다.");
+    Swal.fire({
+      title: "User는 최소 2명이 필요합니다.",
+      showClass: {
+        popup: "animate__animated animate__fadeInDown",
+      },
+      hideClass: {
+        popup: "animate__animated animate__fadeOutUp",
+      },
+    });
   }
 }
 
