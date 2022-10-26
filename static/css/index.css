@@ -57,16 +57,18 @@ img.menu-icon {
   height: 45px;
 }
 
-
 .p-none {
   display: none;
 }
 
-a.ls:hover .p-none {
+a.ls:hover:not(#bgmarea) .p-none {
   margin-top: 12px;
   display: block;
 }
 
+#bgmarea:hover .p-none {
+display: block;
+}
 
 a.ls:hover .menu-icon {
   display: none;

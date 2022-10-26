@@ -242,6 +242,7 @@ function yes() {
 
   // 카드에 {당첨자} 텍스트 삽입
   txt2.innerHTML = `${rTxt}님의 카드`;
+  
 };
 
 //다시뽑을래요
@@ -458,7 +459,7 @@ doRandom();
 //     }
 //   }
 
-//   requestAnimationFrame(Run);
+//    requestAnimationFrame(Run);
 // }
 
 
