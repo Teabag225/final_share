@@ -8,10 +8,13 @@
     <title>상세페이지</title>
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" />
+    <!-- Bootstrap Icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
     <!-- Normalize.css -->
     <link rel="stylesheet" href="/static/css/normalize.css" />
-
     <link rel="stylesheet" href="/static/css/detail_page.css" />
+    <link rel="stylesheet" href="/static/css/cash.css" />
+
     <!-- AOS CDN -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -24,6 +27,46 @@
     src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ddd66e60450ab8ee13bc6a9e68d9140b&libraries=services"></script>
 
 <body>
+    <!-- 메뉴 -->
+    <nav class="menu-list">
+        <div href="#" class="icon"><i class="bi bi-list"></i>MENU</div>
+        <div class="ul-list">
+            <a class="ls" href="index">
+                <img class="menu-icon home" src="/static/image/logo.png" />
+                <p class="p-none">HOME</p>
+            </a>
+            <a class="ls dropdown-btn">
+                <img class="menu-icon" src="/static/image/game.png" />
+                <p class="p-none">복불복 게임</p>
+                <div class="dropdown-container">
+                    <a class="game" href="dicegame">주사위 게임</a>
+                    <a class="game" href="scratch">보물 찾기</a>
+                    <a class="game" href="game2">카드 뽑기</a>
+                </div>
+            </a>
+            <a class="ls hover popup">
+                <img class="menu-icon" src="/static/image/calculator.png" />
+                <p class="p-none">계산기</p>
+            </a>
+        </div>
+    </nav>
+
+    <!-- 토글 메뉴 -->
+    <nav class="toggle-menu d-none">
+        <div class="toggle-menu-list">
+            <a class="toggle-ls" href="index">HOME</a>
+            <a class="toggle-ls toggle-dropdown-btn">
+                복불복 게임
+                <!-- <i class="fa fa-caret-down"></i> -->
+            </a>
+            <div class="toggle-container">
+                <a class="t-game" href="dicegame">주사위 게임</a>
+                <a class="t-game" href="scratch">보물 찾기</a>
+                <a class="t-game" href="game2">카드 뽑기</a>
+            </div>
+            <a class="toggle-ls popup">계산기</a>
+        </div>
+    </nav>
     <div class="title">
         <h3>Your Pick</h3>
         <h1>&lt;을밀대 평양냉면&gt;</h1>
@@ -69,7 +112,7 @@
                     <p class="name1">녹두전</p>
                     <p class="cost">10,000원</p>
                     <div class="review">
-                        <p>" 간은 조금 심심하지만 엄청 바삭하고 고기가 많아요"</p>
+                        <p>" 간은 조금 심심하지만 엄청 바삭하고 고기가 많아요 "</p>
                         <p>" 녹두전은 필수! "</p>
                     </div>
                 </div>
@@ -78,22 +121,63 @@
         <a href="https://map.naver.com/v5/entry/place/11679611?c=14131508.4741242,4515697.1502568,13,0,0,0,dh&placePath=%2Fhome&entry=plt"
             target="_blank" class="card-link">리뷰 & 메뉴 더 보러가기</a>
     </div>
-
+    
     <p class="map-title">음식점 위치</p>
     <div class="map">
         <div id="map" style="width: 100%; height: 100%"></div>
     </div>
+    <!-- 계산기 모달 -->
+    <div class="modal modal-overlay" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-area">X</div>
+                <div class="modal-body">
+                    <div class="cash-main-container">
+                        <!-- 메뉴 입력창 부분 -->
+                        <form id="menuForm">
+                            <h1 class="cash-title">우리 정산 해요</h1>
+                            <div class="wrapper">
+                                <p class="first">주문 입력</p>
+                                <label>메뉴</label>
+                                <input id="menu" type="text" />
+
+                                <label>가격</label>
+                                <input id="price" type="text" />
+                                <button id="submitButton" type="submit">+</button>
+                            </div>
+                        </form>
+                        <!-- 입력 결과 창 부분 -->
+                        <div class="order-list">
+                            <p class="second">주문 리스트</p>
+                            <ol class="lists"></ol>
+                        </div>
+                        <!-- 총합 부분 -->
+                        <div class="cal">
+                            <p id="total"></p>
+                            <label class="peo" for="peo"> / 총 인원수 : </label>
+                            <input id="people" type="number" value="1" onchange="autopay()" />
+                        </div>
+                        <div class="result">
+                            <p class="payment">= 인당 <span id="payment"></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script>
+        var posx = 37.5456624
+        var posy = 126.9458924
         var mapContainer = document.getElementById("map"), // 지도를 표시할 div
             mapOption = {
-                center: new kakao.maps.LatLng(37.5474432, 126.9455146), // 지도의 중심좌표
+                center: new kakao.maps.LatLng(posx, posy), // 지도의 중심좌표
                 level: 4, // 지도의 확대 레벨
             };
 
         var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
-        var markerPosition = new kakao.maps.LatLng(37.5474432, 126.9455146);
+        var markerPosition = new kakao.maps.LatLng(posx, posy);
 
         // 마커를 생성합니다
         var marker = new kakao.maps.Marker({
@@ -103,8 +187,8 @@
         // 마커가 지도 위에 표시되도록 설정합니다
         marker.setMap(map);
 
-        var iwContent = '<div style="padding:5px;">을밀대 평양냉면!</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
-            iwPosition = new kakao.maps.LatLng(33.450701, 126.570667); //인포윈도우 표시 위치입니다
+        var iwContent = '<div style="padding:3px;">옥면가</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+            iwPosition = new kakao.maps.LatLng(posx, posy); //인포윈도우 표시 위치입니다
 
         // 인포윈도우를 생성합니다
         var infowindow = new kakao.maps.InfoWindow({
@@ -123,10 +207,10 @@
             ' <div class="card">' +
             '<img src="./static/image/을밀대평양냉면.jpg" class="card-img-top" alt="을밀대평양냉면" />' +
             '<div class="card-body">' +
-            '<h5 class="card-title">을밀대 평양냉면</h5>' +
+            '<h5 class="card-title">을밀대평양냉면</h5>' +
             ' <p class="card-text">' +
-            " 왜 사람들이 평양 냉면에 빠지게 되는지 알게 되는 맛 " +
-            " 육수가 깔끔하고 개운해요 " +
+            " 왜 사람들이 평양 냉면에 빠지게 되는지 알게 되는 맛 "+
+                " 육수가 깔끔하고 개운해요 " +
             "</p>" +
             "</div>" +
             '<ul class="list-group list-group-flush">' +
@@ -145,7 +229,7 @@
             "</div> ";
 
         // 커스텀 오버레이가 표시될 위치입니다
-        var position = new kakao.maps.LatLng(37.5474432, 126.9455146);
+        var position = new kakao.maps.LatLng(posx, posy);
 
         // 커스텀 오버레이를 생성합니다
         var customOverlay = new kakao.maps.CustomOverlay({
@@ -167,13 +251,76 @@
             strokeStyle: 'solid' // 선 스타일
         });
 
+
+        //dropdown
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
+
+        for (i = 0; i < dropdown.length; i++) {
+            dropdown[i].addEventListener("click", function () {
+                this.classList.toggle("active"); var dropdownContent = this.nextElementSibling; if
+                    (dropdownContent.style.display === "block") { dropdownContent.style.display = "none"; } else {
+                    dropdownContent.style.display = "block";
+                }
+            });
+        } var
+            t_dropdown = document.getElementsByClassName("toggle-dropdown-btn"); var i; for (i = 0; i < t_dropdown.length;
+            i++) {
+            t_dropdown[i].addEventListener("click", function () {
+                this.classList.toggle("t_active"); var
+                    t_dropdownContent = this.nextElementSibling; if (t_dropdownContent.style.display === "block") {
+                        t_dropdownContent.style.display = "none";
+                    } else { t_dropdownContent.style.display = "block"; }
+            });
+        } //토클 메뉴
+        const iconMenu = document.querySelector(".icon"); const toggleMenu = document.querySelector(".toggle-menu");
+        iconMenu.addEventListener("click", function () { toggleMenu.classList.toggle("d-none"); }); // Modal 창 구현
+        const modal = document.querySelector(".modal"); const btnModal = document.querySelectorAll(".popup"); for (let
+            i = 0; i < btnModal.length; i++) {
+            btnModal[i].addEventListener("click", (e) => {
+                modal.style.display = "flex";
+                document.body.classList.add("stop-scroll");
+            });
+        }
+
+        // X 부분 클릭하면 창 닫기
+        const closeBtn = modal.querySelector(".close-area");
+        closeBtn.addEventListener("click", (e) => {
+            modal.style.display = "none";
+            // document.querySelector("#total").innerText = " ";
+            // document.querySelector("#payment").innerText = " ";
+            // document.querySelector("ul").remove();
+            // document.querySelector(".lists").innerHTML = " ";
+            tot = 0;
+            pay = 0;
+
+            $("#total").empty();
+            $("#payment").empty();
+            $(".lists").empty();
+            document.body.classList.remove("stop-scroll");
+        });
+
+        // Modal 창 외의 부분 클릭 했을 떄 창 닫기
+        modal.addEventListener("click", (e) => {
+            const evTarget = e.target;
+            if (evTarget.classList.contains("modal-overlay")) {
+                modal.style.display = "none";
+                tot = 0;
+                pay = 0;
+                $("#total").empty();
+                $("#payment").empty();
+                $(".lists").empty();
+                document.body.classList.remove("stop-scroll");
+            }
+        });
     </script>
-    <!-- AOS JS -->
+    <script src="/static/js/cash.js"></script>
+
+    <!— <!— AOS JS —> —>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
     </script>
-    <!— <script src="./static/js/detail_page.js"></script> —>
 </body>
 
 </html>

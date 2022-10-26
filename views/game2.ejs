@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./static/css/newgame2.css" />
+
+
+  </head>
+  <body>
+    <!-- <canvas id="canvas"></canvas> --> <!--불꽃놀이 효과-->
+
+    <h1>CARD GAME</h1>
+    
+    <!--User-->
+    <div class="input">
+        <label>User1</label>
+        <input id="user1" type="text" />
+        <label>User2</label>
+        <input id="user2" type="text" />
+    </div>
+
+    <!--상단 버튼(유저추가, 유저제거, 실행, 셔플, 새로고침) -->
+    <div class="btn">
+        <button class="add" type="button" onclick="add()"><img src="./static/image/plus.png" alt="유저추가"></button>
+        <button class="remove" type="button" onclick="remove()"><img src="./static/image/remove.png" alt="유저제거"></button>
+        <button class="upDown" id="submitBtn" type="submit" onclick="run(), shuffle()"><img src="./static/image/start-button.png" class="start-button" alt="실행버튼"></button>
+        <button id="shuffle"><img src="/static/image/shuffle.png" onclick="shuffle()" alt="셔플버튼"></button>
+        <button id="reset" type="button" onclick="reset()"><img src="./static/image/reset.png" alt="새로고침"></button>
+    </div>
+    
+    <!-- 게임실행 -->
+    <div class="div1" id="container">
+      <!--카드 추출 텍스트 등장-->
+      <div class="txt1">
+        <div class="left"><p>Click Here</p></div>
+        <div class="right"><img src="./static/image/pointer.png" id="pointer" alt="포인터"></div>
+      </div>
+      <!-- 카드 -->
+      <div class="card" id="c01">
+        <div class="txt2"><p></p></div>
+        <img
+          src="./static/image/cardimg.png"
+          class="cardimg"
+          id="card1"
+          alt=""
+        />
+      </div>
+      <div class="card" id="c02">
+        <div class="txt2"><p></p></div>
+        <img
+          src="./static/image/cardimg.png"
+          
+          class="cardimg"
+          id="card2"
+          alt=""
+        />
+      </div>
+      <div class="card noshow" id="c03">
+        <div class="txt2"><p></p></div>
+        <img
+          src="./static/image/cardimg.png"
+          
+          class="cardimg"
+          id="card3"
+          alt=""
+        />
+      </div>
+      <div class="card noshow" id="c04">
+        <div class="txt2"><p></p></div>
+        <img
+          src="./static/image/cardimg.png"
+          
+          class="cardimg"
+          id="card4"
+          alt=""
+        />
+      </div>
+      <div class="card noshow" id="c05">
+        <div class="txt2"><p></p></div>
+        <img
+          src="./static/image/cardimg.png"
+          
+          class="cardimg"
+          id="card5"
+          alt=""
+        />
+      </div>
+      <div class="card noshow" id="c06">
+        <div class="txt2"><p></p></div>
+        <img
+          src="./static/image/cardimg.png"
+          class="cardimg"
+          id="card6"
+          alt=""
+        />
+      </div>
+    </div>
+
+
+    <!-- 카드 추출시 등장하는 버튼(좌) & 텍스트(우) -->
+    <div class="div2">
+      <div class="div2_1">
+        <div class="btnLeft">
+          <button id="btnY"><img class="btnimg" src="/static/image/check.png" /></button>
+        </div>
+        <div class="btnRight">
+          <p id="thisone">"이걸로 계산해주세요"</p>
+        </div>
+      </div>
+      <br>
+      <div class="div2_2">
+        <div class="btnLeft">
+          <button id="btnN"><img src="/static/image/cancel.png"/></button>
+        </div>
+        <div class="btnRight">
+          <p id="notthisone">"아냐, 다시 뽑아줘요."</p>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 팝업창 -->
+    <div class="modal">
+      <p class="message"></p>
+      <div class="options">
+        <button class="popBtn" id="popBtnY">Okay</button>
+      </div>
+    </div>
+
+</body>
+
+
+<!-- 스크립트 -->
+  <!-- JQUERY -->
+  <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous">
+  </script>
+  
+  <!-- gsap Library CDN -->
+  <script 
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" 
+      integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw==" 
+      crossorigin="anonymous" 
+      referrerpolicy="no-referrer">
+  </script>
+
+  <!-- JavaSript -->
+  <script src="./static/js/newgame2.js"></script>
+    
+    
+</html>
